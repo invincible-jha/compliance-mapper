@@ -1,0 +1,284 @@
+{
+  "$schema": "https://aumos.ai/schemas/compliance-mapping/v1",
+  "framework": "GDPR",
+  "version": "2016/679",
+  "source": "Regulation (EU) 2016/679 of the European Parliament and of the Council",
+  "lastUpdated": "2026-02-26",
+  "articles": [
+    {
+      "id": "Art5",
+      "title": "Principles relating to processing of personal data",
+      "description": "Personal data shall be processed lawfully, fairly, transparently, for specified purposes, minimised, accurate, retained no longer than necessary, and secured.",
+      "principles": ["lawfulness", "fairness", "transparency", "purpose_limitation", "data_minimisation", "accuracy", "storage_limitation", "integrity_confidentiality", "accountability"],
+      "governanceConfigPaths": [
+        "governance.privacy.processingPurposes",
+        "governance.privacy.lawfulBasisRegister",
+        "governance.privacy.minimizationPolicy",
+        "governance.data.retentionSchedule",
+        "governance.data.accuracyPolicy",
+        "governance.data.encryptionPolicy",
+        "governance.privacy.accountabilityRecord"
+      ],
+      "auditLogEvents": ["lawful_basis_documented", "purpose_limitation_reviewed", "retention_enforced"],
+      "evidenceTypes": ["ropa", "lawful_basis_record", "retention_schedule", "privacy_policy"]
+    },
+    {
+      "id": "Art6",
+      "title": "Lawfulness of processing",
+      "description": "Processing is lawful only if and insofar as at least one lawful basis applies.",
+      "lawfulBases": ["consent", "contract", "legal_obligation", "vital_interests", "public_task", "legitimate_interests"],
+      "governanceConfigPaths": [
+        "governance.privacy.lawfulBasisRegister",
+        "governance.privacy.consentManagement",
+        "governance.privacy.legitimateInterestAssessments"
+      ],
+      "auditLogEvents": ["lawful_basis_applied", "lia_completed"],
+      "evidenceTypes": ["lawful_basis_register", "lia_document", "consent_record"]
+    },
+    {
+      "id": "Art7",
+      "title": "Conditions for consent",
+      "description": "Where processing is based on consent, the controller must demonstrate that the data subject consented.",
+      "governanceConfigPaths": [
+        "governance.privacy.consentManagement",
+        "governance.privacy.consentRecordRetention",
+        "governance.privacy.withdrawalMechanism",
+        "governance.privacy.granularConsentOptions"
+      ],
+      "auditLogEvents": ["consent_recorded", "consent_withdrawn"],
+      "evidenceTypes": ["consent_record", "withdrawal_log", "consent_mechanism_screenshot"]
+    },
+    {
+      "id": "Art9",
+      "title": "Processing of special categories of personal data",
+      "description": "Processing of data revealing racial or ethnic origin, political opinions, religious beliefs, genetic/biometric data, health data, sex life or sexual orientation is prohibited unless a specific exception applies.",
+      "specialCategories": ["racial_ethnic_origin", "political_opinions", "religious_beliefs", "genetic_data", "biometric_data", "health_data", "sex_life", "sexual_orientation", "trade_union_membership", "criminal_convictions"],
+      "governanceConfigPaths": [
+        "governance.data.specialCategoryInventory",
+        "governance.privacy.specialCategoryLawfulBasis",
+        "governance.data.sensitiveDataControls",
+        "governance.data.explicitConsentProcess"
+      ],
+      "auditLogEvents": ["special_category_processed", "explicit_consent_obtained"],
+      "evidenceTypes": ["special_category_register", "explicit_consent_record", "dpia"]
+    },
+    {
+      "id": "Art12",
+      "title": "Transparent information, communication and modalities",
+      "description": "The controller shall take appropriate measures to provide information in a concise, transparent, intelligible, and easily accessible form.",
+      "governanceConfigPaths": [
+        "governance.privacy.privacyNoticeUrl",
+        "governance.privacy.noticeReadabilityStandard",
+        "governance.privacy.languageVersions",
+        "governance.privacy.responseSLA"
+      ],
+      "auditLogEvents": ["privacy_notice_served", "information_request_responded"],
+      "evidenceTypes": ["privacy_notice", "response_log"]
+    },
+    {
+      "id": "Art13",
+      "title": "Information to be provided where personal data are collected from data subject",
+      "description": "Where personal data are collected directly from the data subject, the controller shall provide specified information at collection time.",
+      "requiredElements": ["controller_identity", "dpo_contact", "processing_purposes", "lawful_basis", "recipients", "transfer_safeguards", "retention_period", "data_subject_rights", "consent_withdrawal", "complaint_right", "automated_decision_making"],
+      "governanceConfigPaths": [
+        "governance.privacy.privacyNoticeUrl",
+        "governance.privacy.dpoContact",
+        "governance.privacy.processingPurposes",
+        "governance.privacy.lawfulBasisRegister",
+        "governance.privacy.dataTransfers",
+        "governance.data.retentionSchedule",
+        "governance.privacy.dataSubjectRightsProcess"
+      ],
+      "auditLogEvents": ["notice_provided_at_collection"],
+      "evidenceTypes": ["privacy_notice", "collection_point_record"]
+    },
+    {
+      "id": "Art14",
+      "title": "Information to be provided where personal data have not been obtained from data subject",
+      "description": "Where personal data have not been obtained from the data subject, the controller shall provide specified information.",
+      "governanceConfigPaths": [
+        "governance.privacy.indirectCollectionPolicy",
+        "governance.privacy.thirdPartyDataSources",
+        "governance.privacy.noticeToIndirectSubjects"
+      ],
+      "auditLogEvents": ["indirect_collection_documented", "notice_sent_to_indirect_subject"],
+      "evidenceTypes": ["indirect_collection_register", "notice_delivery_record"]
+    },
+    {
+      "id": "Art15",
+      "title": "Right of access by the data subject",
+      "description": "The data subject shall have the right to obtain confirmation of processing and a copy of personal data.",
+      "governanceConfigPaths": [
+        "governance.privacy.dataSubjectAccessProcess",
+        "governance.privacy.accessResponseSLA",
+        "governance.privacy.identityVerificationProcess",
+        "governance.privacy.accessFulfillmentProcess"
+      ],
+      "auditLogEvents": ["access_request_received", "access_request_fulfilled"],
+      "evidenceTypes": ["sar_log", "sar_response", "fulfillment_record"]
+    },
+    {
+      "id": "Art16",
+      "title": "Right to rectification",
+      "description": "The data subject shall have the right to obtain rectification of inaccurate personal data without undue delay.",
+      "governanceConfigPaths": [
+        "governance.privacy.correctionProcess",
+        "governance.privacy.rectificationSLA",
+        "governance.data.correctionPropagationPolicy"
+      ],
+      "auditLogEvents": ["rectification_request_received", "data_rectified"],
+      "evidenceTypes": ["rectification_log", "correction_confirmation"]
+    },
+    {
+      "id": "Art17",
+      "title": "Right to erasure ('right to be forgotten')",
+      "description": "The data subject shall have the right to obtain erasure of personal data without undue delay in specified circumstances.",
+      "conditions": ["no_longer_necessary", "consent_withdrawn", "objection_upheld", "unlawful_processing", "legal_obligation", "child_consent"],
+      "governanceConfigPaths": [
+        "governance.privacy.erasureProcess",
+        "governance.data.disposalPolicy",
+        "governance.data.backupErasurePolicy",
+        "governance.privacy.erasureSLA",
+        "governance.privacy.thirdPartyErasureNotification"
+      ],
+      "auditLogEvents": ["erasure_request_received", "data_erased", "third_party_erasure_notified"],
+      "evidenceTypes": ["erasure_log", "deletion_certificate", "third_party_notification"]
+    },
+    {
+      "id": "Art18",
+      "title": "Right to restriction of processing",
+      "description": "The data subject shall have the right to obtain restriction of processing in specified circumstances.",
+      "governanceConfigPaths": [
+        "governance.privacy.restrictionProcess",
+        "governance.data.restrictionFlag",
+        "governance.privacy.restrictionLiftingProcess"
+      ],
+      "auditLogEvents": ["restriction_applied", "restriction_lifted"],
+      "evidenceTypes": ["restriction_log", "restriction_configuration"]
+    },
+    {
+      "id": "Art19",
+      "title": "Notification obligation regarding rectification or erasure",
+      "description": "The controller shall communicate any rectification, erasure, or restriction to each recipient to whom the personal data have been disclosed.",
+      "governanceConfigPaths": [
+        "governance.privacy.recipientNotificationProcess",
+        "governance.privacy.dataRecipientRegister",
+        "governance.privacy.notificationSLA"
+      ],
+      "auditLogEvents": ["recipient_notified_of_change"],
+      "evidenceTypes": ["recipient_register", "notification_log"]
+    },
+    {
+      "id": "Art20",
+      "title": "Right to data portability",
+      "description": "The data subject shall have the right to receive personal data in a structured, commonly used, machine-readable format.",
+      "governanceConfigPaths": [
+        "governance.privacy.portabilityProcess",
+        "governance.privacy.portabilityFormats",
+        "governance.privacy.portabilitySLA",
+        "governance.data.exportFormats"
+      ],
+      "auditLogEvents": ["portability_request_received", "data_exported"],
+      "evidenceTypes": ["portability_log", "export_record"]
+    },
+    {
+      "id": "Art21",
+      "title": "Right to object",
+      "description": "The data subject shall have the right to object to processing based on legitimate interests or direct marketing.",
+      "governanceConfigPaths": [
+        "governance.privacy.objectProcess",
+        "governance.privacy.directMarketingOptOut",
+        "governance.privacy.objectBalancingTest"
+      ],
+      "auditLogEvents": ["objection_received", "objection_upheld", "marketing_opt_out_processed"],
+      "evidenceTypes": ["objection_log", "balancing_test", "opt_out_record"]
+    },
+    {
+      "id": "Art22",
+      "title": "Automated individual decision-making, including profiling",
+      "description": "The data subject shall have the right not to be subject to solely automated decisions producing significant effects without human review.",
+      "governanceConfigPaths": [
+        "governance.ai.automatedDecisionRegister",
+        "governance.ai.humanOversightProcess",
+        "governance.ai.profilingPolicy",
+        "governance.ai.explainabilityProcess"
+      ],
+      "auditLogEvents": ["automated_decision_made", "human_review_triggered", "decision_challenged"],
+      "evidenceTypes": ["automated_decision_register", "human_review_record", "explainability_documentation"]
+    },
+    {
+      "id": "Art25",
+      "title": "Data protection by design and by default",
+      "description": "The controller shall implement appropriate technical and organisational measures to give effect to data protection principles.",
+      "designPrinciples": ["data_minimisation", "pseudonymisation", "transparency", "access_limitation"],
+      "governanceConfigPaths": [
+        "governance.privacy.privacyByDesignProcess",
+        "governance.data.pseudonymisationPolicy",
+        "governance.data.minimizationByDefault",
+        "governance.sdlc.privacyReview",
+        "governance.access.defaultAccessRestriction"
+      ],
+      "auditLogEvents": ["privacy_by_design_review_completed", "pseudonymisation_applied"],
+      "evidenceTypes": ["pbd_checklist", "sdlc_privacy_review", "pseudonymisation_configuration"]
+    },
+    {
+      "id": "Art30",
+      "title": "Records of processing activities",
+      "description": "Each controller shall maintain a record of processing activities.",
+      "ropaFields": ["controller_identity", "dpo_contact", "purposes", "data_subject_categories", "data_categories", "recipients", "transfers", "retention_periods", "security_measures"],
+      "governanceConfigPaths": [
+        "governance.privacy.ropaDocument",
+        "governance.privacy.ropaUpdateProcess",
+        "governance.privacy.ropaReviewSchedule"
+      ],
+      "auditLogEvents": ["ropa_updated", "ropa_reviewed"],
+      "evidenceTypes": ["ropa_document", "ropa_review_record"]
+    },
+    {
+      "id": "Art32",
+      "title": "Security of processing",
+      "description": "The controller and processor shall implement appropriate technical and organisational measures to ensure security appropriate to the risk.",
+      "measures": ["pseudonymisation", "encryption", "confidentiality_integrity_availability", "resilience", "restore_availability", "testing_evaluation"],
+      "governanceConfigPaths": [
+        "governance.data.encryptionAtRestPolicy",
+        "governance.data.encryptionInTransitPolicy",
+        "governance.data.pseudonymisationPolicy",
+        "governance.security.accessControlPolicy",
+        "governance.business.bcpPolicy",
+        "governance.security.penetrationTestingSchedule",
+        "governance.security.vulnerabilityManagementPolicy"
+      ],
+      "auditLogEvents": ["security_assessment_completed", "encryption_verified", "pen_test_completed"],
+      "evidenceTypes": ["security_assessment", "encryption_configuration", "pen_test_report", "bcp_document"]
+    },
+    {
+      "id": "Art33",
+      "title": "Notification of a personal data breach to the supervisory authority",
+      "description": "In the case of a personal data breach, the controller shall notify the supervisory authority within 72 hours.",
+      "governanceConfigPaths": [
+        "governance.incident.breachDetectionProcess",
+        "governance.incident.breachNotificationProcess",
+        "governance.incident.supervisoryAuthorityContact",
+        "governance.incident.breachRegister"
+      ],
+      "auditLogEvents": ["breach_detected", "supervisory_authority_notified"],
+      "evidenceTypes": ["breach_register", "notification_record", "72hr_log"]
+    },
+    {
+      "id": "Art35",
+      "title": "Data protection impact assessment",
+      "description": "Where processing is likely to result in high risk to natural persons, the controller shall carry out a DPIA prior to processing.",
+      "highRiskCriteria": ["systematic_evaluation", "large_scale_processing_of_special_categories", "systematic_monitoring_of_public_areas"],
+      "dpiaElements": ["processing_description", "necessity_proportionality", "risk_assessment", "measures_to_address_risk"],
+      "governanceConfigPaths": [
+        "governance.privacy.dpiaProcess",
+        "governance.privacy.dpiaThresholdCriteria",
+        "governance.privacy.dpiaRegister",
+        "governance.privacy.dpoReviewProcess",
+        "governance.ai.automatedDecisionRegister"
+      ],
+      "auditLogEvents": ["dpia_completed", "dpia_approved", "dpia_reviewed"],
+      "evidenceTypes": ["dpia_document", "dpia_register", "dpo_review_record"]
+    }
+  ]
+}

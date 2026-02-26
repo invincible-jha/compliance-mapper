@@ -1,0 +1,616 @@
+{
+  "$schema": "https://aumos.ai/schemas/compliance-mapping/v1",
+  "framework": "SOC 2 Type II",
+  "version": "2017",
+  "source": "AICPA Trust Services Criteria",
+  "lastUpdated": "2026-02-26",
+  "categories": [
+    {
+      "id": "CC",
+      "name": "Common Criteria (Security)",
+      "controls": [
+        {
+          "id": "CC1.1",
+          "title": "Organizational Commitment to Integrity and Ethical Values",
+          "description": "The entity demonstrates a commitment to integrity and ethical values.",
+          "governanceConfigPaths": [
+            "governance.ethics.codeOfConduct",
+            "governance.ethics.conflictOfInterestPolicy",
+            "governance.organization.leadershipAttestation"
+          ],
+          "auditLogEvents": ["ethics_training_completed", "policy_acknowledged"],
+          "evidenceTypes": ["policy_document", "training_record", "attestation"]
+        },
+        {
+          "id": "CC1.2",
+          "title": "Board Oversight of Internal Control",
+          "description": "The board of directors demonstrates independence from management and exercises oversight of internal control.",
+          "governanceConfigPaths": [
+            "governance.organization.boardComposition",
+            "governance.organization.auditCommittee",
+            "governance.oversight.reviewFrequency"
+          ],
+          "auditLogEvents": ["board_review_completed", "audit_committee_meeting"],
+          "evidenceTypes": ["meeting_minutes", "board_charter", "committee_report"]
+        },
+        {
+          "id": "CC1.3",
+          "title": "Organizational Structure and Reporting Lines",
+          "description": "Management establishes structures, reporting lines, and appropriate authorities.",
+          "governanceConfigPaths": [
+            "governance.organization.orgChart",
+            "governance.organization.roleDefinitions",
+            "governance.access.rolesAndResponsibilities"
+          ],
+          "auditLogEvents": ["role_assignment", "org_change"],
+          "evidenceTypes": ["org_chart", "role_matrix", "job_description"]
+        },
+        {
+          "id": "CC1.4",
+          "title": "Commitment to Competent Personnel",
+          "description": "The entity demonstrates a commitment to attract, develop, and retain competent individuals.",
+          "governanceConfigPaths": [
+            "governance.hr.hiringPolicy",
+            "governance.hr.backgroundCheckPolicy",
+            "governance.hr.trainingRequirements"
+          ],
+          "auditLogEvents": ["background_check_completed", "training_completed", "performance_review"],
+          "evidenceTypes": ["hiring_record", "training_record", "performance_review"]
+        },
+        {
+          "id": "CC1.5",
+          "title": "Accountability for Internal Control Responsibilities",
+          "description": "The entity holds individuals accountable for their internal control responsibilities.",
+          "governanceConfigPaths": [
+            "governance.accountability.ownerAssignments",
+            "governance.accountability.escalationPolicy",
+            "governance.hr.disciplinaryPolicy"
+          ],
+          "auditLogEvents": ["control_owner_assigned", "escalation_triggered"],
+          "evidenceTypes": ["responsibility_matrix", "acknowledgment_record"]
+        },
+        {
+          "id": "CC2.1",
+          "title": "Information Quality Objectives",
+          "description": "The entity uses relevant, quality information to support the functioning of internal control.",
+          "governanceConfigPaths": [
+            "governance.data.qualityPolicy",
+            "governance.data.retentionPolicy",
+            "governance.logging.logIntegrityPolicy"
+          ],
+          "auditLogEvents": ["data_quality_check", "log_integrity_verified"],
+          "evidenceTypes": ["data_quality_report", "log_sample"]
+        },
+        {
+          "id": "CC2.2",
+          "title": "Internal Communication of Control Information",
+          "description": "The entity internally communicates information necessary to support the functioning of internal control.",
+          "governanceConfigPaths": [
+            "governance.communication.internalChannels",
+            "governance.policies.distributionList",
+            "governance.policies.acknowledgmentTracking"
+          ],
+          "auditLogEvents": ["policy_communicated", "policy_acknowledged"],
+          "evidenceTypes": ["distribution_record", "acknowledgment_log"]
+        },
+        {
+          "id": "CC2.3",
+          "title": "External Communication of Control Information",
+          "description": "The entity communicates with external parties regarding matters affecting the functioning of internal control.",
+          "governanceConfigPaths": [
+            "governance.communication.externalDisclosure",
+            "governance.privacy.noticePolicy",
+            "governance.security.vulnerabilityDisclosure"
+          ],
+          "auditLogEvents": ["external_notice_sent", "security_disclosure"],
+          "evidenceTypes": ["privacy_notice", "disclosure_record"]
+        },
+        {
+          "id": "CC3.1",
+          "title": "Risk Assessment Objectives",
+          "description": "The entity specifies objectives with sufficient clarity to enable the identification and assessment of risks.",
+          "governanceConfigPaths": [
+            "governance.risk.objectivesRegister",
+            "governance.risk.riskAppetiteStatement",
+            "governance.risk.assessmentSchedule"
+          ],
+          "auditLogEvents": ["risk_assessment_completed", "risk_register_updated"],
+          "evidenceTypes": ["risk_register", "risk_appetite_statement"]
+        },
+        {
+          "id": "CC3.2",
+          "title": "Risk Identification and Analysis",
+          "description": "The entity identifies risks to the achievement of its objectives across the entity and analyzes risks.",
+          "governanceConfigPaths": [
+            "governance.risk.riskRegister",
+            "governance.risk.riskAnalysisMethod",
+            "governance.risk.threatSources"
+          ],
+          "auditLogEvents": ["risk_identified", "risk_analyzed"],
+          "evidenceTypes": ["risk_register", "risk_analysis_report"]
+        },
+        {
+          "id": "CC3.3",
+          "title": "Fraud Risk Assessment",
+          "description": "The entity considers the potential for fraud in assessing risks to the achievement of objectives.",
+          "governanceConfigPaths": [
+            "governance.risk.fraudRiskAssessment",
+            "governance.risk.antifraudControls",
+            "governance.ethics.whistleblowerPolicy"
+          ],
+          "auditLogEvents": ["fraud_risk_reviewed", "whistleblower_report"],
+          "evidenceTypes": ["fraud_risk_report", "whistleblower_policy"]
+        },
+        {
+          "id": "CC3.4",
+          "title": "Significant Change Risk Identification",
+          "description": "The entity identifies and assesses changes that could significantly impact internal control.",
+          "governanceConfigPaths": [
+            "governance.changeManagement.changeRiskPolicy",
+            "governance.changeManagement.impactAssessmentProcess"
+          ],
+          "auditLogEvents": ["significant_change_assessed", "change_risk_reviewed"],
+          "evidenceTypes": ["change_risk_assessment", "change_log"]
+        },
+        {
+          "id": "CC4.1",
+          "title": "Control Monitoring Activities",
+          "description": "The entity selects, develops, and performs ongoing or separate evaluations to ascertain whether controls are present and functioning.",
+          "governanceConfigPaths": [
+            "governance.monitoring.controlTestingSchedule",
+            "governance.monitoring.continuousMonitoringConfig",
+            "governance.audit.internalAuditPlan"
+          ],
+          "auditLogEvents": ["control_test_completed", "audit_completed"],
+          "evidenceTypes": ["control_test_result", "audit_report"]
+        },
+        {
+          "id": "CC4.2",
+          "title": "Deficiency Evaluation and Communication",
+          "description": "The entity evaluates and communicates internal control deficiencies in a timely manner.",
+          "governanceConfigPaths": [
+            "governance.audit.deficiencyTracking",
+            "governance.audit.remediationPolicy",
+            "governance.communication.deficiencyEscalation"
+          ],
+          "auditLogEvents": ["deficiency_identified", "deficiency_remediated"],
+          "evidenceTypes": ["deficiency_log", "remediation_record"]
+        },
+        {
+          "id": "CC5.1",
+          "title": "Control Activity Selection and Development",
+          "description": "The entity selects and develops control activities that contribute to the mitigation of risks.",
+          "governanceConfigPaths": [
+            "governance.controls.controlInventory",
+            "governance.controls.controlOwners",
+            "governance.risk.controlRiskMapping"
+          ],
+          "auditLogEvents": ["control_implemented", "control_reviewed"],
+          "evidenceTypes": ["control_inventory", "risk_control_matrix"]
+        },
+        {
+          "id": "CC5.2",
+          "title": "Technology General Controls",
+          "description": "The entity selects and develops general control activities over technology.",
+          "governanceConfigPaths": [
+            "governance.technology.changeManagementPolicy",
+            "governance.technology.softwareDevelopmentPolicy",
+            "governance.technology.infrastructurePolicy"
+          ],
+          "auditLogEvents": ["itgc_test_completed", "change_approved"],
+          "evidenceTypes": ["itgc_test_result", "change_management_record"]
+        },
+        {
+          "id": "CC5.3",
+          "title": "Policy and Procedure Deployment",
+          "description": "The entity deploys control activities through policies that establish what is expected.",
+          "governanceConfigPaths": [
+            "governance.policies.policyInventory",
+            "governance.policies.reviewSchedule",
+            "governance.policies.approvalWorkflow"
+          ],
+          "auditLogEvents": ["policy_approved", "policy_reviewed"],
+          "evidenceTypes": ["policy_inventory", "policy_document"]
+        },
+        {
+          "id": "CC6.1",
+          "title": "Logical Access Security Software Infrastructure",
+          "description": "The entity implements logical access security to protect against threats from external sources.",
+          "governanceConfigPaths": [
+            "governance.access.authenticationPolicy",
+            "governance.access.mfaPolicy",
+            "governance.access.networkSegmentationPolicy"
+          ],
+          "auditLogEvents": ["mfa_enforced", "access_attempt", "network_policy_applied"],
+          "evidenceTypes": ["access_policy", "mfa_configuration", "network_diagram"]
+        },
+        {
+          "id": "CC6.2",
+          "title": "Prior to Issuing System Credentials",
+          "description": "Prior to issuing system credentials and granting system access, the entity registers and authorizes new users.",
+          "governanceConfigPaths": [
+            "governance.access.userProvisioningProcess",
+            "governance.access.approvalWorkflow",
+            "governance.access.accessRequestPolicy"
+          ],
+          "auditLogEvents": ["user_provisioned", "access_approved"],
+          "evidenceTypes": ["provisioning_record", "access_approval"]
+        },
+        {
+          "id": "CC6.3",
+          "title": "Role-Based Access and Least Privilege",
+          "description": "The entity authorizes, modifies, or removes access based on roles, needs, and least privilege.",
+          "governanceConfigPaths": [
+            "governance.access.rbacPolicy",
+            "governance.access.leastPrivilegePolicy",
+            "governance.access.privilegedAccessPolicy"
+          ],
+          "auditLogEvents": ["role_assigned", "privilege_reviewed", "access_removed"],
+          "evidenceTypes": ["rbac_configuration", "access_review_record"]
+        },
+        {
+          "id": "CC6.4",
+          "title": "Physical Access Restriction",
+          "description": "The entity restricts physical access to facilities and infrastructure assets.",
+          "governanceConfigPaths": [
+            "governance.physical.accessControlPolicy",
+            "governance.physical.visitorPolicy",
+            "governance.physical.dataCenter"
+          ],
+          "auditLogEvents": ["physical_access_logged", "visitor_logged"],
+          "evidenceTypes": ["physical_access_log", "badge_configuration"]
+        },
+        {
+          "id": "CC6.5",
+          "title": "Logical Access Removal upon Termination",
+          "description": "The entity discontinues logical and physical access upon termination.",
+          "governanceConfigPaths": [
+            "governance.access.offboardingProcess",
+            "governance.hr.terminationChecklist",
+            "governance.access.accountDeactivationSLA"
+          ],
+          "auditLogEvents": ["user_deprovisioned", "account_disabled"],
+          "evidenceTypes": ["offboarding_record", "account_closure_confirmation"]
+        },
+        {
+          "id": "CC6.6",
+          "title": "External System Access Controls",
+          "description": "The entity implements logical access security measures to restrict external system access.",
+          "governanceConfigPaths": [
+            "governance.security.firewallPolicy",
+            "governance.security.apiGatewayConfig",
+            "governance.vendors.vendorAccessPolicy"
+          ],
+          "auditLogEvents": ["external_access_reviewed", "api_key_rotated"],
+          "evidenceTypes": ["firewall_configuration", "api_policy"]
+        },
+        {
+          "id": "CC6.7",
+          "title": "Data Transmission Protection",
+          "description": "The entity restricts the transmission, movement, and removal of information to authorized parties.",
+          "governanceConfigPaths": [
+            "governance.data.encryptionInTransitPolicy",
+            "governance.data.dlpPolicy",
+            "governance.data.dataTransferAgreements"
+          ],
+          "auditLogEvents": ["data_transfer_logged", "dlp_policy_applied"],
+          "evidenceTypes": ["encryption_policy", "dlp_configuration", "data_transfer_record"]
+        },
+        {
+          "id": "CC6.8",
+          "title": "Malware and Unauthorized Software Prevention",
+          "description": "The entity implements controls to prevent or detect and act upon the introduction of unauthorized software.",
+          "governanceConfigPaths": [
+            "governance.security.antimalwarePolicy",
+            "governance.security.softwareWhitelistPolicy",
+            "governance.security.endpointPolicy"
+          ],
+          "auditLogEvents": ["malware_scan_completed", "unauthorized_software_detected"],
+          "evidenceTypes": ["antimalware_configuration", "endpoint_policy"]
+        },
+        {
+          "id": "CC7.1",
+          "title": "Infrastructure and Software Detection Controls",
+          "description": "The entity uses detection and monitoring procedures to identify changes to configurations.",
+          "governanceConfigPaths": [
+            "governance.security.configurationManagementPolicy",
+            "governance.monitoring.fileIntegrityMonitoring",
+            "governance.security.baselineConfig"
+          ],
+          "auditLogEvents": ["configuration_change_detected", "baseline_drift_detected"],
+          "evidenceTypes": ["configuration_baseline", "fim_report"]
+        },
+        {
+          "id": "CC7.2",
+          "title": "Monitoring for Anomalous Activity",
+          "description": "The entity monitors system components and their operation for anomalies.",
+          "governanceConfigPaths": [
+            "governance.monitoring.siemConfig",
+            "governance.monitoring.alertingThresholds",
+            "governance.monitoring.logAggregationPolicy"
+          ],
+          "auditLogEvents": ["security_alert_triggered", "log_review_completed"],
+          "evidenceTypes": ["siem_configuration", "alert_log", "log_review_record"]
+        },
+        {
+          "id": "CC7.3",
+          "title": "Incident Evaluation",
+          "description": "The entity evaluates security events to determine whether they could or have resulted in incidents.",
+          "governanceConfigPaths": [
+            "governance.incident.triageProcess",
+            "governance.incident.classificationCriteria",
+            "governance.incident.escalationThresholds"
+          ],
+          "auditLogEvents": ["security_event_triaged", "incident_classified"],
+          "evidenceTypes": ["incident_triage_record", "classification_criteria"]
+        },
+        {
+          "id": "CC7.4",
+          "title": "Incident Response",
+          "description": "The entity responds to identified security incidents by executing a defined incident management program.",
+          "governanceConfigPaths": [
+            "governance.incident.responsePolicy",
+            "governance.incident.responseTeam",
+            "governance.incident.communicationPlan"
+          ],
+          "auditLogEvents": ["incident_response_initiated", "incident_resolved", "postmortem_completed"],
+          "evidenceTypes": ["incident_response_plan", "incident_record", "postmortem_report"]
+        },
+        {
+          "id": "CC7.5",
+          "title": "Identified Security Incidents Recovery",
+          "description": "The entity identifies, develops, and implements activities to recover from identified security incidents.",
+          "governanceConfigPaths": [
+            "governance.incident.recoveryProcedures",
+            "governance.business.bcpPolicy",
+            "governance.business.rtoRpoTargets"
+          ],
+          "auditLogEvents": ["recovery_initiated", "system_restored"],
+          "evidenceTypes": ["recovery_procedure", "restore_record"]
+        },
+        {
+          "id": "CC8.1",
+          "title": "Change Management Process",
+          "description": "The entity authorizes, designs, develops or acquires, configures, documents, tests, approves, and implements changes.",
+          "governanceConfigPaths": [
+            "governance.changeManagement.changePolicy",
+            "governance.changeManagement.approvalWorkflow",
+            "governance.changeManagement.testingRequirements",
+            "governance.changeManagement.rollbackProcedure"
+          ],
+          "auditLogEvents": ["change_requested", "change_approved", "change_tested", "change_deployed"],
+          "evidenceTypes": ["change_request", "change_approval", "test_result", "deployment_record"]
+        },
+        {
+          "id": "CC9.1",
+          "title": "Risk Mitigation Activities",
+          "description": "The entity identifies, selects, and develops risk mitigation activities for identified risks.",
+          "governanceConfigPaths": [
+            "governance.risk.mitigationRegister",
+            "governance.risk.treatmentOptions",
+            "governance.risk.residualRiskAcceptance"
+          ],
+          "auditLogEvents": ["risk_mitigation_implemented", "residual_risk_accepted"],
+          "evidenceTypes": ["risk_treatment_plan", "mitigation_evidence"]
+        },
+        {
+          "id": "CC9.2",
+          "title": "Vendor and Business Partner Risk Management",
+          "description": "The entity assesses and manages risks associated with vendors and business partners.",
+          "governanceConfigPaths": [
+            "governance.vendors.vendorRiskPolicy",
+            "governance.vendors.dueDiligenceProcess",
+            "governance.vendors.contractRequirements",
+            "governance.vendors.vendorReviewSchedule"
+          ],
+          "auditLogEvents": ["vendor_assessed", "vendor_contract_reviewed"],
+          "evidenceTypes": ["vendor_assessment", "vendor_contract", "due_diligence_record"]
+        }
+      ]
+    },
+    {
+      "id": "A",
+      "name": "Availability",
+      "controls": [
+        {
+          "id": "A1.1",
+          "title": "Availability Performance Objectives",
+          "description": "The entity maintains, monitors, and evaluates current processing capacity and use of system components.",
+          "governanceConfigPaths": [
+            "governance.availability.uptimeTarget",
+            "governance.availability.capacityPlan",
+            "governance.monitoring.capacityMonitoring"
+          ],
+          "auditLogEvents": ["capacity_review_completed", "uptime_measured"],
+          "evidenceTypes": ["capacity_plan", "uptime_report"]
+        },
+        {
+          "id": "A1.2",
+          "title": "Capacity Management",
+          "description": "The entity authorizes, designs, develops or acquires, configures, implements, operates, approves, and recovers environmental controls.",
+          "governanceConfigPaths": [
+            "governance.availability.scalingPolicy",
+            "governance.infrastructure.redundancyPolicy",
+            "governance.infrastructure.disasterRecoveryPlan"
+          ],
+          "auditLogEvents": ["scaling_event", "redundancy_tested", "dr_test_completed"],
+          "evidenceTypes": ["scaling_configuration", "redundancy_architecture", "dr_test_result"]
+        },
+        {
+          "id": "A1.3",
+          "title": "Recovery and Resumption",
+          "description": "The entity tests recovery plan procedures to achieve timely recovery of commitments.",
+          "governanceConfigPaths": [
+            "governance.business.bcpPolicy",
+            "governance.business.rtoRpoTargets",
+            "governance.business.drTestSchedule"
+          ],
+          "auditLogEvents": ["bcp_tested", "dr_exercise_completed"],
+          "evidenceTypes": ["bcp_document", "dr_test_report", "rto_rpo_measurement"]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Confidentiality",
+      "controls": [
+        {
+          "id": "C1.1",
+          "title": "Confidentiality Commitments Identification",
+          "description": "The entity identifies and maintains confidential information.",
+          "governanceConfigPaths": [
+            "governance.data.classificationPolicy",
+            "governance.data.confidentialDataInventory",
+            "governance.data.labelingPolicy"
+          ],
+          "auditLogEvents": ["data_classified", "confidential_data_accessed"],
+          "evidenceTypes": ["data_classification_policy", "data_inventory"]
+        },
+        {
+          "id": "C1.2",
+          "title": "Confidential Information Disposal",
+          "description": "The entity disposes of confidential information to meet the entity's objectives.",
+          "governanceConfigPaths": [
+            "governance.data.retentionPolicy",
+            "governance.data.disposalPolicy",
+            "governance.data.sanitizationStandard"
+          ],
+          "auditLogEvents": ["data_disposed", "media_sanitized"],
+          "evidenceTypes": ["disposal_record", "sanitization_certificate"]
+        }
+      ]
+    },
+    {
+      "id": "PI",
+      "name": "Processing Integrity",
+      "controls": [
+        {
+          "id": "PI1.1",
+          "title": "Complete and Accurate Processing",
+          "description": "The entity obtains or generates, uses, and communicates relevant quality information to support processing integrity.",
+          "governanceConfigPaths": [
+            "governance.processing.inputValidationPolicy",
+            "governance.processing.errorHandlingPolicy",
+            "governance.processing.reconciliationProcess"
+          ],
+          "auditLogEvents": ["processing_error_logged", "reconciliation_completed"],
+          "evidenceTypes": ["reconciliation_report", "error_log_sample"]
+        },
+        {
+          "id": "PI1.2",
+          "title": "System Processing Controls",
+          "description": "The entity implements policies and procedures over system inputs, processing, and outputs.",
+          "governanceConfigPaths": [
+            "governance.processing.processingControls",
+            "governance.processing.outputValidationPolicy",
+            "governance.processing.auditTrailPolicy"
+          ],
+          "auditLogEvents": ["processing_control_tested", "output_validated"],
+          "evidenceTypes": ["processing_control_evidence", "audit_trail_sample"]
+        }
+      ]
+    },
+    {
+      "id": "P",
+      "name": "Privacy",
+      "controls": [
+        {
+          "id": "P1.0",
+          "title": "Privacy Notice",
+          "description": "The entity provides notice to data subjects about its privacy practices.",
+          "governanceConfigPaths": [
+            "governance.privacy.privacyNoticeUrl",
+            "governance.privacy.noticeReviewSchedule",
+            "governance.privacy.noticeLanguages"
+          ],
+          "auditLogEvents": ["privacy_notice_updated", "notice_served"],
+          "evidenceTypes": ["privacy_notice", "notice_delivery_record"]
+        },
+        {
+          "id": "P2.0",
+          "title": "Choice and Consent",
+          "description": "The entity communicates choices available for personal information and obtains consent.",
+          "governanceConfigPaths": [
+            "governance.privacy.consentManagement",
+            "governance.privacy.optOutMechanism",
+            "governance.privacy.consentRecordRetention"
+          ],
+          "auditLogEvents": ["consent_obtained", "opt_out_processed"],
+          "evidenceTypes": ["consent_record", "opt_out_record"]
+        },
+        {
+          "id": "P3.0",
+          "title": "Collection of Personal Information",
+          "description": "Personal information is collected consistent with the entity's objectives.",
+          "governanceConfigPaths": [
+            "governance.privacy.dataCollectionPolicy",
+            "governance.privacy.purposeLimitation",
+            "governance.privacy.minimizationPolicy"
+          ],
+          "auditLogEvents": ["personal_data_collected", "collection_audit_performed"],
+          "evidenceTypes": ["data_collection_policy", "data_inventory"]
+        },
+        {
+          "id": "P4.0",
+          "title": "Personal Information Use, Retention, and Disposal",
+          "description": "Personal information is used consistent with the entity's privacy commitments.",
+          "governanceConfigPaths": [
+            "governance.privacy.usePolicy",
+            "governance.data.retentionSchedule",
+            "governance.data.disposalPolicy"
+          ],
+          "auditLogEvents": ["data_retention_enforced", "data_deleted"],
+          "evidenceTypes": ["retention_schedule", "disposal_record"]
+        },
+        {
+          "id": "P5.0",
+          "title": "Access to Personal Information",
+          "description": "The entity grants data subjects access to their personal information.",
+          "governanceConfigPaths": [
+            "governance.privacy.dataSubjectAccessProcess",
+            "governance.privacy.accessResponseSLA",
+            "governance.privacy.identityVerificationProcess"
+          ],
+          "auditLogEvents": ["subject_access_request_received", "subject_access_fulfilled"],
+          "evidenceTypes": ["sar_log", "sar_response"]
+        },
+        {
+          "id": "P6.0",
+          "title": "Disclosure and Notification",
+          "description": "Personal information is disclosed to third parties consistent with privacy commitments.",
+          "governanceConfigPaths": [
+            "governance.privacy.thirdPartyDisclosurePolicy",
+            "governance.privacy.dataProcessingAgreements",
+            "governance.privacy.breachNotificationProcess"
+          ],
+          "auditLogEvents": ["third_party_disclosure_logged", "breach_notification_sent"],
+          "evidenceTypes": ["disclosure_record", "dpa_document", "breach_notification"]
+        },
+        {
+          "id": "P7.0",
+          "title": "Quality of Personal Information",
+          "description": "The entity maintains accurate, complete, and relevant personal information.",
+          "governanceConfigPaths": [
+            "governance.data.accuracyPolicy",
+            "governance.privacy.correctionProcess",
+            "governance.data.qualityControls"
+          ],
+          "auditLogEvents": ["data_corrected", "accuracy_review_completed"],
+          "evidenceTypes": ["accuracy_policy", "correction_record"]
+        },
+        {
+          "id": "P8.0",
+          "title": "Privacy Monitoring and Enforcement",
+          "description": "The entity monitors compliance with privacy commitments and addresses privacy-related inquiries.",
+          "governanceConfigPaths": [
+            "governance.privacy.complianceReviewSchedule",
+            "governance.privacy.complaintProcess",
+            "governance.privacy.dpoContact"
+          ],
+          "auditLogEvents": ["privacy_audit_completed", "complaint_resolved"],
+          "evidenceTypes": ["privacy_audit_report", "complaint_log"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@aumos/compliance-mapper",
+  "version": "0.1.0",
+  "description": "Auto-generate SOC 2, GDPR, and EU AI Act compliance evidence from governance configs and audit logs",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "author": "MuVeraAI Corporation",
+  "homepage": "https://github.com/muveraai/aumos-oss/tree/main/compliance-mapper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muveraai/aumos-oss.git",
+    "directory": "compliance-mapper/typescript"
+  },
+  "keywords": [
+    "compliance",
+    "soc2",
+    "gdpr",
+    "eu-ai-act",
+    "governance",
+    "audit",
+    "evidence"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/**/*.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

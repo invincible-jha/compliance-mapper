@@ -1,0 +1,276 @@
+{
+  "$schema": "https://aumos.ai/schemas/compliance-mapping/v1",
+  "framework": "EU AI Act",
+  "version": "2024/1689",
+  "source": "Regulation (EU) 2024/1689 of the European Parliament and of the Council",
+  "lastUpdated": "2026-02-26",
+  "scope": "High-risk AI systems as defined in Article 6 and Annex III",
+  "chapters": [
+    {
+      "id": "Chapter2",
+      "title": "Requirements for High-Risk AI Systems",
+      "articles": [
+        {
+          "id": "Art8",
+          "title": "Compliance with the requirements",
+          "description": "High-risk AI systems shall comply with the requirements established in this Chapter.",
+          "governanceConfigPaths": [
+            "governance.ai.riskClassification",
+            "governance.ai.complianceFramework",
+            "governance.ai.highRiskDesignation"
+          ],
+          "auditLogEvents": ["ai_risk_classification_completed", "high_risk_designation_confirmed"],
+          "evidenceTypes": ["risk_classification_record", "compliance_framework_document"]
+        },
+        {
+          "id": "Art9",
+          "title": "Risk management system",
+          "description": "A risk management system shall be established, implemented, documented and maintained for high-risk AI systems throughout their entire lifecycle.",
+          "requirements": [
+            "iterative_process",
+            "known_foreseeable_risks",
+            "risks_from_misuse",
+            "risk_estimation_evaluation",
+            "adoption_of_risk_management_measures",
+            "post_market_monitoring"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.riskManagementSystem",
+            "governance.ai.riskRegister",
+            "governance.ai.misuseScenariosRegister",
+            "governance.ai.riskMitigationMeasures",
+            "governance.ai.residualRiskAcceptanceCriteria",
+            "governance.ai.postMarketMonitoringPlan"
+          ],
+          "auditLogEvents": ["ai_risk_review_completed", "misuse_scenario_assessed", "risk_mitigation_implemented"],
+          "evidenceTypes": ["ai_risk_management_plan", "risk_register", "mitigation_record", "monitoring_report"]
+        },
+        {
+          "id": "Art10",
+          "title": "Data and data governance",
+          "description": "Training, validation and testing datasets shall be subject to data governance practices.",
+          "requirements": [
+            "relevant_design_choices",
+            "data_collection_processes",
+            "data_preparation_operations",
+            "formulation_of_relevant_assumptions",
+            "assessment_of_availability_quantity_suitability",
+            "examination_for_biases",
+            "identification_of_relevant_data_gaps"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.dataGovernancePolicy",
+            "governance.ai.trainingDataRegister",
+            "governance.ai.dataQualityPolicy",
+            "governance.ai.biasAssessmentProcess",
+            "governance.ai.dataLineageTracking",
+            "governance.ai.dataGapsRegister",
+            "governance.data.personalDataInTrainingPolicy"
+          ],
+          "auditLogEvents": ["training_data_assessed", "bias_evaluation_completed", "data_quality_check_passed"],
+          "evidenceTypes": ["data_governance_policy", "training_data_card", "bias_assessment_report", "data_quality_report"]
+        },
+        {
+          "id": "Art11",
+          "title": "Technical documentation",
+          "description": "Technical documentation shall be drawn up before the high-risk AI system is placed on the market or put into service.",
+          "documentationElements": [
+            "general_description",
+            "system_description_and_components",
+            "development_process_description",
+            "monitoring_functioning_control",
+            "validation_testing_results",
+            "predefined_changes",
+            "standards_applied",
+            "eu_declaration_of_conformity",
+            "post_market_monitoring_plan"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.technicalDocumentationRegister",
+            "governance.ai.systemArchitectureDocument",
+            "governance.ai.modelCard",
+            "governance.ai.validationResults",
+            "governance.ai.standardsCompliance",
+            "governance.ai.changeManagementPolicy"
+          ],
+          "auditLogEvents": ["technical_documentation_completed", "documentation_reviewed"],
+          "evidenceTypes": ["technical_documentation_package", "model_card", "validation_report", "architecture_document"]
+        },
+        {
+          "id": "Art12",
+          "title": "Record-keeping",
+          "description": "High-risk AI systems shall be designed and developed with capabilities enabling the automatic recording of events ('logs') while operating.",
+          "loggingRequirements": [
+            "period_of_each_use",
+            "reference_database_verified_against",
+            "input_data_that_led_to_search",
+            "identity_of_natural_persons_involved"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.auditLoggingPolicy",
+            "governance.ai.logRetentionPolicy",
+            "governance.ai.logIntegrityControls",
+            "governance.ai.operationalLogFormat",
+            "governance.ai.logAccessControls"
+          ],
+          "auditLogEvents": ["ai_system_log_generated", "log_integrity_verified"],
+          "evidenceTypes": ["logging_configuration", "log_sample", "log_retention_policy", "log_access_record"]
+        },
+        {
+          "id": "Art13",
+          "title": "Transparency and provision of information to deployers",
+          "description": "High-risk AI systems shall be designed and developed in such a way to ensure that their operation is sufficiently transparent to enable deployers to understand the system's outputs.",
+          "transparencyElements": [
+            "ai_system_identity",
+            "capabilities_and_limitations",
+            "performance_metrics",
+            "known_and_foreseeable_circumstances_of_risks",
+            "human_oversight_measures",
+            "technical_capabilities_characteristics",
+            "input_data_specifications"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.systemTransparencyDocument",
+            "governance.ai.deployerInstructionsForUse",
+            "governance.ai.capabilitiesLimitationsDocument",
+            "governance.ai.performanceMetricsRegister",
+            "governance.ai.knownRisksDocument",
+            "governance.ai.humanOversightGuidance"
+          ],
+          "auditLogEvents": ["transparency_documentation_updated", "deployer_briefing_completed"],
+          "evidenceTypes": ["instructions_for_use", "transparency_declaration", "performance_metrics_report"]
+        },
+        {
+          "id": "Art14",
+          "title": "Human oversight",
+          "description": "High-risk AI systems shall be designed and developed in such a way to allow effective oversight by natural persons during the use of such systems.",
+          "oversightMeasures": [
+            "ability_to_fully_understand",
+            "ability_to_remain_aware_of_automation_bias",
+            "ability_to_correctly_interpret_output",
+            "ability_to_decide_not_to_use_or_override",
+            "ability_to_intervene_halt_system"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.humanOversightProcess",
+            "governance.ai.overrideCapability",
+            "governance.ai.haltCapability",
+            "governance.ai.humanReviewTriggers",
+            "governance.ai.operatorTrainingRequirements",
+            "governance.ai.automationBiasControls"
+          ],
+          "auditLogEvents": ["human_override_exercised", "system_halted_by_operator", "human_review_performed"],
+          "evidenceTypes": ["human_oversight_procedure", "override_log", "operator_training_record", "halt_mechanism_test"]
+        },
+        {
+          "id": "Art15",
+          "title": "Accuracy, robustness and cybersecurity",
+          "description": "High-risk AI systems shall be designed and developed to achieve an appropriate level of accuracy, robustness and cybersecurity.",
+          "requirements": [
+            "accuracy_metrics_declared",
+            "resilience_to_errors",
+            "resilience_to_faults",
+            "resilience_to_inconsistencies",
+            "resilience_to_third_party_adversarial_inputs",
+            "technical_redundancy_solutions",
+            "cybersecurity_measures"
+          ],
+          "governanceConfigPaths": [
+            "governance.ai.accuracyMetrics",
+            "governance.ai.robustnessTesting",
+            "governance.ai.adversarialTestingPolicy",
+            "governance.security.aiSystemSecurityPolicy",
+            "governance.ai.modelValidationPolicy",
+            "governance.ai.driftMonitoringPolicy",
+            "governance.ai.fallbackMechanisms"
+          ],
+          "auditLogEvents": ["accuracy_benchmark_completed", "robustness_test_passed", "adversarial_test_completed", "security_assessment_completed"],
+          "evidenceTypes": ["accuracy_benchmark_report", "robustness_test_report", "adversarial_test_report", "security_assessment"]
+        }
+      ]
+    },
+    {
+      "id": "Chapter3_Section4",
+      "title": "Notifying Authorities and Notified Bodies (Reference)",
+      "note": "Conformity assessment obligations — reference only, implementation out of scope for this tool.",
+      "articles": [
+        {
+          "id": "Art43_ref",
+          "title": "Conformity assessment (reference)",
+          "description": "High-risk AI systems shall undergo conformity assessment before being placed on the market.",
+          "governanceConfigPaths": [
+            "governance.ai.conformityAssessmentStatus",
+            "governance.ai.notifiedBodyEngagement",
+            "governance.ai.euDeclarationOfConformity"
+          ],
+          "auditLogEvents": ["conformity_assessment_initiated", "eu_declaration_signed"],
+          "evidenceTypes": ["conformity_assessment_record", "eu_declaration_of_conformity"]
+        }
+      ]
+    },
+    {
+      "id": "Chapter5",
+      "title": "General Purpose AI Models (Reference)",
+      "note": "GPAI model obligations — reference only. Use Chapter 2 controls for high-risk AI system compliance.",
+      "articles": [
+        {
+          "id": "Art53_ref",
+          "title": "Obligations for providers of GPAI models (reference)",
+          "description": "Providers of general purpose AI models must maintain technical documentation and comply with copyright law.",
+          "governanceConfigPaths": [
+            "governance.ai.gpaiModelRegister",
+            "governance.ai.trainingDataCopyrightPolicy",
+            "governance.ai.gpaiTechnicalDocumentation"
+          ],
+          "auditLogEvents": ["gpai_documentation_completed"],
+          "evidenceTypes": ["gpai_technical_documentation", "copyright_compliance_record"]
+        }
+      ]
+    }
+  ],
+  "annexIII": {
+    "title": "Annex III — High-Risk AI System Categories",
+    "categories": [
+      {
+        "id": "AIII-1",
+        "area": "Biometric identification and categorisation",
+        "items": ["Real-time remote biometric identification in publicly accessible spaces", "Post remote biometric identification systems", "AI-based categorisation of natural persons by biometrics"]
+      },
+      {
+        "id": "AIII-2",
+        "area": "Critical infrastructure",
+        "items": ["Safety components of water, gas, heating, electricity management", "Road traffic management"]
+      },
+      {
+        "id": "AIII-3",
+        "area": "Education and vocational training",
+        "items": ["Determining access or admission to educational institutions", "Assessing learning outcomes", "Evaluating examination authenticity"]
+      },
+      {
+        "id": "AIII-4",
+        "area": "Employment, workers management and access to self-employment",
+        "items": ["Recruitment or selection of natural persons", "Making promotion or termination decisions", "Task allocation based on behavioural traits"]
+      },
+      {
+        "id": "AIII-5",
+        "area": "Essential private services and essential public services",
+        "items": ["Credit scoring", "Life and health insurance risk assessment", "Emergency services dispatch prioritisation"]
+      },
+      {
+        "id": "AIII-6",
+        "area": "Law enforcement",
+        "items": ["Polygraph and similar tools", "Evaluation of evidence reliability", "Assessing recidivism risk", "Crime analytics for profiling"]
+      },
+      {
+        "id": "AIII-7",
+        "area": "Migration, asylum and border control",
+        "items": ["Lie detection", "Assessment of irregular migration risk", "Examining asylum applications"]
+      },
+      {
+        "id": "AIII-8",
+        "area": "Administration of justice and democratic processes",
+        "items": ["Researching and interpreting facts and law", "Alternative dispute resolution"]
+      }
+    ]
+  }
+}
