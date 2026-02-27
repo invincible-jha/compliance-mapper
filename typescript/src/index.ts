@@ -11,6 +11,7 @@
  *   SOC2Framework,
  *   GDPRFramework,
  *   EUAIActFramework,
+ *   ISO42001Framework,
  *   renderMarkdownReport,
  *   renderJsonReport,
  * } from "@aumos/compliance-mapper";
@@ -20,6 +21,7 @@
  *   new SOC2Framework(),
  *   new GDPRFramework(),
  *   new EUAIActFramework(),
+ *   new ISO42001Framework(),
  * ]);
  *
  * const markdown = renderMarkdownReport(report);
@@ -37,6 +39,19 @@ export type { ComplianceFramework, FrameworkMetadata } from "./frameworks/interf
 export { SOC2Framework } from "./frameworks/soc2.js";
 export { GDPRFramework } from "./frameworks/gdpr.js";
 export { EUAIActFramework } from "./frameworks/eu-ai-act.js";
+export {
+  ISO42001Framework,
+  getCoverageReport,
+  getEvidenceRequirements,
+  generateGapAnalysis,
+} from "./frameworks/iso42001.js";
+export type {
+  EvidenceRequirement,
+  ClauseCoverage,
+  CoverageReport,
+  GapDetail,
+  GapAnalysis,
+} from "./frameworks/iso42001.js";
 
 // ── Evidence ─────────────────────────────────────────────────────────────────
 

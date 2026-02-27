@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "framework": "EU AI Act (Regulation 2024/1689)",
+  "effectiveDate": "2026-08-02",
+  "categories": [
+    {
+      "level": "prohibited",
+      "description": "AI systems that pose unacceptable risk",
+      "articles": ["Article 5"],
+      "criteria": [
+        "social_scoring_by_public_authorities",
+        "real_time_biometric_identification_in_public",
+        "emotion_recognition_in_workplace_education",
+        "predictive_policing_based_solely_on_profiling",
+        "untargeted_facial_image_scraping",
+        "subliminal_manipulation_causing_harm",
+        "exploitation_of_vulnerabilities"
+      ]
+    },
+    {
+      "level": "high_risk",
+      "description": "AI systems listed in Annex III",
+      "articles": ["Article 6", "Article 8-15", "Annex III"],
+      "criteria": [
+        "biometric_identification",
+        "critical_infrastructure_management",
+        "education_vocational_access",
+        "employment_worker_management",
+        "essential_services_access",
+        "law_enforcement",
+        "migration_asylum_border",
+        "justice_democratic_processes",
+        "safety_component_of_regulated_product"
+      ],
+      "required_controls": [
+        "risk_management_system",
+        "data_governance",
+        "technical_documentation",
+        "record_keeping",
+        "transparency_information",
+        "human_oversight",
+        "accuracy_robustness_cybersecurity"
+      ]
+    },
+    {
+      "level": "limited_risk",
+      "description": "AI systems with specific transparency obligations",
+      "articles": ["Article 50"],
+      "criteria": [
+        "chatbot_interaction",
+        "emotion_recognition",
+        "biometric_categorization",
+        "deep_fake_generation",
+        "ai_generated_content"
+      ],
+      "required_controls": [
+        "disclosure_of_ai_interaction",
+        "content_labeling"
+      ]
+    },
+    {
+      "level": "minimal_risk",
+      "description": "All other AI systems",
+      "articles": ["Article 95"],
+      "criteria": ["default"],
+      "required_controls": [
+        "voluntary_code_of_conduct"
+      ]
+    }
+  ]
+}

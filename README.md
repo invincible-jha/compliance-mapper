@@ -1,5 +1,7 @@
 # @aumos/compliance-mapper
 
+[![Governance Score](https://img.shields.io/badge/governance-self--assessed-blue)](https://github.com/aumos-ai/compliance-mapper)
+
 Auto-generate SOC 2 Type II, GDPR, and EU AI Act compliance evidence from governance configs and audit logs.
 
 Part of the [Aumos OSS](https://github.com/muveraai/aumos-oss) governance toolkit — Phase 4, Project 4.1.

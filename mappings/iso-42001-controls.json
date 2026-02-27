@@ -1,0 +1,649 @@
+{
+  "$comment": "SPDX-License-Identifier: BSL-1.1 | Copyright (c) 2026 MuVeraAI Corporation",
+  "standard": "ISO/IEC 42001:2023",
+  "version": "2023",
+  "description": "AI Management System standard — control mapping to AumOS governance protocols",
+  "lastUpdated": "2026-02-26",
+  "controls": [
+    {
+      "id": "4.1",
+      "title": "Understanding the organization and its context",
+      "category": "Context of the organization",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-001"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Organization context documented in governance configuration",
+      "governanceConfigPaths": [
+        "governance.ai.organizationContext",
+        "governance.ai.stakeholderRequirements",
+        "governance.ai.aimsScope"
+      ],
+      "auditLogEvents": ["organization_context_reviewed", "stakeholder_analysis_completed"]
+    },
+    {
+      "id": "4.2",
+      "title": "Understanding the needs and expectations of interested parties",
+      "category": "Context of the organization",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-002", "AOAP-001"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Stakeholder needs mapped through trust protocol and oversight protocol",
+      "governanceConfigPaths": [
+        "governance.ai.interestedParties",
+        "governance.ai.stakeholderRequirements",
+        "governance.ai.regulatoryObligations"
+      ],
+      "auditLogEvents": ["stakeholder_requirements_documented", "regulatory_review_completed"]
+    },
+    {
+      "id": "4.3",
+      "title": "Determining the scope of the AIMS",
+      "category": "Context of the organization",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-003"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "AIMS scope defined through governance configuration boundaries",
+      "governanceConfigPaths": [
+        "governance.ai.aimsScope",
+        "governance.ai.aimsBoundaries",
+        "governance.ai.applicabilityStatement"
+      ],
+      "auditLogEvents": ["aims_scope_defined", "scope_review_completed"]
+    },
+    {
+      "id": "4.4",
+      "title": "AI management system",
+      "category": "Context of the organization",
+      "aumos_protocols": ["ATP", "AOAP", "ALP"],
+      "aumos_controls": ["ATP-004", "AOAP-002", "ALP-001"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Full AIMS established through integrated AumOS protocol suite",
+      "governanceConfigPaths": [
+        "governance.ai.managementSystemPolicy",
+        "governance.ai.processInteractions",
+        "governance.ai.documentedInformation"
+      ],
+      "auditLogEvents": ["aims_established", "aims_process_documented"]
+    },
+    {
+      "id": "5.1",
+      "title": "Leadership and commitment",
+      "category": "Leadership",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-001", "AOAP-001"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Trust level assignments demonstrate AI governance commitment",
+      "governanceConfigPaths": [
+        "governance.ai.leadershipCommitment",
+        "governance.ai.managementReview",
+        "governance.organization.aiGovernanceCharter"
+      ],
+      "auditLogEvents": ["leadership_commitment_attested", "management_review_completed"]
+    },
+    {
+      "id": "5.2",
+      "title": "AI policy",
+      "category": "Leadership",
+      "aumos_protocols": ["ATP", "ALP"],
+      "aumos_controls": ["ATP-005", "ALP-002"],
+      "coverage": "full",
+      "evidence_type": "policy_document",
+      "notes": "AI policy established and communicated via trust and logging protocols",
+      "governanceConfigPaths": [
+        "governance.ai.aiPolicy",
+        "governance.ai.aiPolicyObjectives",
+        "governance.ai.aiPolicyCommunication"
+      ],
+      "auditLogEvents": ["ai_policy_approved", "ai_policy_communicated"]
+    },
+    {
+      "id": "5.3",
+      "title": "Roles, responsibilities and authorities",
+      "category": "Leadership",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-006", "AOAP-003"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Role definitions enforced through trust protocol assignments",
+      "governanceConfigPaths": [
+        "governance.ai.aiRolesResponsibilities",
+        "governance.ai.aiGovernanceBoard",
+        "governance.access.aiSystemRoles"
+      ],
+      "auditLogEvents": ["ai_role_assigned", "governance_authority_delegated"]
+    },
+    {
+      "id": "6.1",
+      "title": "Actions to address risks and opportunities",
+      "category": "Planning",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-007", "AOAP-004"],
+      "coverage": "full",
+      "evidence_type": "risk_assessment",
+      "notes": "Risk and opportunity actions planned through governance framework",
+      "governanceConfigPaths": [
+        "governance.ai.riskOpportunityRegister",
+        "governance.ai.riskTreatmentPlan",
+        "governance.ai.aiImpactAssessment"
+      ],
+      "auditLogEvents": ["ai_risk_assessment_completed", "risk_treatment_plan_approved"]
+    },
+    {
+      "id": "6.2",
+      "title": "AI objectives and planning to achieve them",
+      "category": "Planning",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-008"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "AI objectives documented with measurable targets",
+      "governanceConfigPaths": [
+        "governance.ai.aiObjectives",
+        "governance.ai.objectiveMeasurement",
+        "governance.ai.achievementPlan"
+      ],
+      "auditLogEvents": ["ai_objectives_set", "objective_progress_reviewed"]
+    },
+    {
+      "id": "7.1",
+      "title": "Resources",
+      "category": "Support",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-009"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Resource allocation for AIMS documented in governance config",
+      "governanceConfigPaths": [
+        "governance.ai.aimsResources",
+        "governance.ai.resourceAllocation",
+        "governance.ai.infrastructureRequirements"
+      ],
+      "auditLogEvents": ["resource_allocation_approved", "infrastructure_provisioned"]
+    },
+    {
+      "id": "7.2",
+      "title": "Competence",
+      "category": "Support",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-010", "AOAP-005"],
+      "coverage": "full",
+      "evidence_type": "training_record",
+      "notes": "Personnel competence requirements and training tracked",
+      "governanceConfigPaths": [
+        "governance.ai.competenceRequirements",
+        "governance.ai.aiTrainingProgram",
+        "governance.hr.aiSkillsMatrix"
+      ],
+      "auditLogEvents": ["ai_training_completed", "competence_assessment_passed"]
+    },
+    {
+      "id": "7.3",
+      "title": "Awareness",
+      "category": "Support",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-011"],
+      "coverage": "full",
+      "evidence_type": "training_record",
+      "notes": "AI policy and AIMS awareness programs tracked",
+      "governanceConfigPaths": [
+        "governance.ai.awarenessProgram",
+        "governance.ai.aiPolicyAwareness",
+        "governance.communication.aiAwarenessChannels"
+      ],
+      "auditLogEvents": ["awareness_training_completed", "ai_policy_acknowledged"]
+    },
+    {
+      "id": "7.4",
+      "title": "Communication",
+      "category": "Support",
+      "aumos_protocols": ["ATP", "ALP"],
+      "aumos_controls": ["ATP-012", "ALP-003"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Internal and external communication on AIMS matters",
+      "governanceConfigPaths": [
+        "governance.ai.communicationPlan",
+        "governance.ai.internalReporting",
+        "governance.ai.externalDisclosure"
+      ],
+      "auditLogEvents": ["aims_communication_sent", "stakeholder_notified"]
+    },
+    {
+      "id": "7.5",
+      "title": "Documented information",
+      "category": "Support",
+      "aumos_protocols": ["ALP"],
+      "aumos_controls": ["ALP-004"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Document control and retention for AIMS records",
+      "governanceConfigPaths": [
+        "governance.ai.documentControlPolicy",
+        "governance.ai.documentRetentionPolicy",
+        "governance.ai.versionControlPolicy"
+      ],
+      "auditLogEvents": ["document_created", "document_reviewed", "document_archived"]
+    },
+    {
+      "id": "8.1",
+      "title": "Operational planning and control",
+      "category": "Operation",
+      "aumos_protocols": ["ATP", "AOAP", "ALP"],
+      "aumos_controls": ["ATP-013", "AOAP-006", "ALP-005"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Operational processes planned and controlled per AIMS requirements",
+      "governanceConfigPaths": [
+        "governance.ai.operationalPlan",
+        "governance.ai.processControls",
+        "governance.ai.outsourcedProcessControls"
+      ],
+      "auditLogEvents": ["operational_plan_approved", "process_control_verified"]
+    },
+    {
+      "id": "8.2",
+      "title": "AI risk assessment",
+      "category": "Operation",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-014", "AOAP-007"],
+      "coverage": "full",
+      "evidence_type": "risk_assessment",
+      "notes": "AI-specific risk assessments conducted at planned intervals",
+      "governanceConfigPaths": [
+        "governance.ai.riskAssessmentMethodology",
+        "governance.ai.riskAssessmentSchedule",
+        "governance.ai.riskCriteria"
+      ],
+      "auditLogEvents": ["ai_risk_assessment_conducted", "risk_level_determined"]
+    },
+    {
+      "id": "8.3",
+      "title": "AI risk treatment",
+      "category": "Operation",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-015", "AOAP-008"],
+      "coverage": "full",
+      "evidence_type": "risk_assessment",
+      "notes": "Risk treatment options selected and implemented",
+      "governanceConfigPaths": [
+        "governance.ai.riskTreatmentPlan",
+        "governance.ai.residualRiskAcceptance",
+        "governance.ai.statementOfApplicability"
+      ],
+      "auditLogEvents": ["risk_treatment_implemented", "residual_risk_accepted"]
+    },
+    {
+      "id": "8.4",
+      "title": "AI system impact assessment",
+      "category": "Operation",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-016", "AOAP-009"],
+      "coverage": "full",
+      "evidence_type": "impact_assessment",
+      "notes": "Impact assessments conducted for AI systems on individuals and society",
+      "governanceConfigPaths": [
+        "governance.ai.impactAssessmentPolicy",
+        "governance.ai.impactAssessmentMethodology",
+        "governance.ai.impactAssessmentResults"
+      ],
+      "auditLogEvents": ["impact_assessment_completed", "impact_assessment_reviewed"]
+    },
+    {
+      "id": "9.1",
+      "title": "Monitoring, measurement, analysis and evaluation",
+      "category": "Performance evaluation",
+      "aumos_protocols": ["ALP", "AOAP"],
+      "aumos_controls": ["ALP-006", "AOAP-010"],
+      "coverage": "full",
+      "evidence_type": "monitoring_record",
+      "notes": "AIMS performance monitored and evaluated through audit logging",
+      "governanceConfigPaths": [
+        "governance.ai.performanceMetrics",
+        "governance.ai.monitoringSchedule",
+        "governance.ai.evaluationCriteria"
+      ],
+      "auditLogEvents": ["performance_measurement_completed", "aims_evaluation_conducted"]
+    },
+    {
+      "id": "9.2",
+      "title": "Internal audit",
+      "category": "Performance evaluation",
+      "aumos_protocols": ["ALP", "AOAP"],
+      "aumos_controls": ["ALP-007", "AOAP-011"],
+      "coverage": "full",
+      "evidence_type": "audit_report",
+      "notes": "Internal audits of the AIMS conducted at planned intervals",
+      "governanceConfigPaths": [
+        "governance.ai.internalAuditPlan",
+        "governance.ai.auditProgramSchedule",
+        "governance.ai.auditCriteria"
+      ],
+      "auditLogEvents": ["internal_audit_completed", "audit_findings_reported"]
+    },
+    {
+      "id": "9.3",
+      "title": "Management review",
+      "category": "Performance evaluation",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-017", "AOAP-012"],
+      "coverage": "full",
+      "evidence_type": "review_record",
+      "notes": "Top management reviews of the AIMS at planned intervals",
+      "governanceConfigPaths": [
+        "governance.ai.managementReviewSchedule",
+        "governance.ai.managementReviewInputs",
+        "governance.ai.managementReviewOutputs"
+      ],
+      "auditLogEvents": ["management_review_completed", "review_actions_assigned"]
+    },
+    {
+      "id": "10.1",
+      "title": "Nonconformity and corrective action",
+      "category": "Improvement",
+      "aumos_protocols": ["ALP", "AOAP"],
+      "aumos_controls": ["ALP-008", "AOAP-013"],
+      "coverage": "full",
+      "evidence_type": "corrective_action",
+      "notes": "Nonconformities identified and corrective actions tracked",
+      "governanceConfigPaths": [
+        "governance.ai.nonconformityProcess",
+        "governance.ai.correctiveActionProcedure",
+        "governance.ai.rootCauseAnalysisMethod"
+      ],
+      "auditLogEvents": ["nonconformity_identified", "corrective_action_implemented"]
+    },
+    {
+      "id": "10.2",
+      "title": "Continual improvement",
+      "category": "Improvement",
+      "aumos_protocols": ["ATP", "AOAP", "ALP"],
+      "aumos_controls": ["ATP-018", "AOAP-014", "ALP-009"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Continual improvement of AIMS suitability, adequacy and effectiveness",
+      "governanceConfigPaths": [
+        "governance.ai.improvementPlan",
+        "governance.ai.improvementObjectives",
+        "governance.ai.lessonsLearnedRegister"
+      ],
+      "auditLogEvents": ["improvement_action_planned", "improvement_effectiveness_reviewed"]
+    },
+    {
+      "id": "A.2.2",
+      "title": "AI policy",
+      "category": "Annex A — Policies for AI",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-020"],
+      "coverage": "full",
+      "evidence_type": "policy_document",
+      "notes": "Formal AI policy addressing responsible AI principles",
+      "governanceConfigPaths": [
+        "governance.ai.aiPolicy",
+        "governance.ai.responsibleAiPrinciples",
+        "governance.ai.aiEthicsGuidelines"
+      ],
+      "auditLogEvents": ["ai_policy_published", "ai_ethics_reviewed"]
+    },
+    {
+      "id": "A.2.3",
+      "title": "AI system inventory",
+      "category": "Annex A — Policies for AI",
+      "aumos_protocols": ["ATP", "ALP"],
+      "aumos_controls": ["ATP-021", "ALP-010"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Inventory of AI systems maintained and updated",
+      "governanceConfigPaths": [
+        "governance.ai.aiSystemInventory",
+        "governance.ai.systemClassification",
+        "governance.ai.inventoryUpdateSchedule"
+      ],
+      "auditLogEvents": ["ai_system_registered", "inventory_updated"]
+    },
+    {
+      "id": "A.3.2",
+      "title": "AI internal organization",
+      "category": "Annex A — Internal organization",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-022", "AOAP-015"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Internal organizational structure for AI governance",
+      "governanceConfigPaths": [
+        "governance.ai.governanceStructure",
+        "governance.ai.segregationOfDuties",
+        "governance.ai.crossFunctionalTeams"
+      ],
+      "auditLogEvents": ["governance_structure_reviewed", "duties_segregation_verified"]
+    },
+    {
+      "id": "A.4.2",
+      "title": "Resources for AI systems",
+      "category": "Annex A — Resources for AI systems",
+      "aumos_protocols": ["ATP"],
+      "aumos_controls": ["ATP-023"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Computational and human resources allocated to AI systems",
+      "governanceConfigPaths": [
+        "governance.ai.computeResources",
+        "governance.ai.dataResources",
+        "governance.ai.humanResources"
+      ],
+      "auditLogEvents": ["resource_provisioned", "resource_review_completed"]
+    },
+    {
+      "id": "A.4.5",
+      "title": "AI system log management",
+      "category": "Annex A — Resources for AI systems",
+      "aumos_protocols": ["ALP"],
+      "aumos_controls": ["ALP-011"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Logging and log management for AI system operations",
+      "governanceConfigPaths": [
+        "governance.ai.logManagementPolicy",
+        "governance.ai.logRetentionSchedule",
+        "governance.ai.logAccessControls"
+      ],
+      "auditLogEvents": ["log_management_reviewed", "log_retention_enforced"]
+    },
+    {
+      "id": "A.5.2",
+      "title": "AI impact assessment",
+      "category": "Annex A — Assessing impacts of AI systems",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-024", "AOAP-016"],
+      "coverage": "full",
+      "evidence_type": "impact_assessment",
+      "notes": "Impact assessments conducted before deployment and at intervals",
+      "governanceConfigPaths": [
+        "governance.ai.impactAssessmentPolicy",
+        "governance.ai.socialImpactAssessment",
+        "governance.ai.environmentalImpactAssessment"
+      ],
+      "auditLogEvents": ["impact_assessment_initiated", "impact_results_documented"]
+    },
+    {
+      "id": "A.5.4",
+      "title": "Documenting and reporting results",
+      "category": "Annex A — Assessing impacts of AI systems",
+      "aumos_protocols": ["ALP"],
+      "aumos_controls": ["ALP-012"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Impact assessment results documented and reported to stakeholders",
+      "governanceConfigPaths": [
+        "governance.ai.impactReportingPolicy",
+        "governance.ai.impactReportTemplate",
+        "governance.ai.stakeholderReportingSchedule"
+      ],
+      "auditLogEvents": ["impact_report_generated", "impact_report_distributed"]
+    },
+    {
+      "id": "A.6.2",
+      "title": "AI system lifecycle",
+      "category": "Annex A — AI system lifecycle",
+      "aumos_protocols": ["ATP", "AOAP", "ALP"],
+      "aumos_controls": ["ATP-025", "AOAP-017", "ALP-013"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Lifecycle management from design through decommission",
+      "governanceConfigPaths": [
+        "governance.ai.lifecyclePolicy",
+        "governance.ai.designPhaseGates",
+        "governance.ai.decommissionPolicy"
+      ],
+      "auditLogEvents": ["lifecycle_phase_transition", "phase_gate_approved"]
+    },
+    {
+      "id": "A.6.7",
+      "title": "AI system deployment",
+      "category": "Annex A — AI system lifecycle",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-026", "AOAP-018"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Deployment procedures ensuring readiness and approval",
+      "governanceConfigPaths": [
+        "governance.ai.deploymentApprovalProcess",
+        "governance.ai.deploymentChecklist",
+        "governance.ai.productionReadinessReview"
+      ],
+      "auditLogEvents": ["deployment_approved", "production_readiness_confirmed"]
+    },
+    {
+      "id": "A.7.2",
+      "title": "Data for AI systems",
+      "category": "Annex A — Data for AI systems",
+      "aumos_protocols": ["ATP", "ALP"],
+      "aumos_controls": ["ATP-027", "ALP-014"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Data quality, provenance and governance for AI training and inference",
+      "governanceConfigPaths": [
+        "governance.ai.dataQualityPolicy",
+        "governance.ai.dataProvenanceTracking",
+        "governance.ai.dataLabelingStandards"
+      ],
+      "auditLogEvents": ["data_quality_assessed", "data_provenance_verified"]
+    },
+    {
+      "id": "A.7.4",
+      "title": "Data provenance",
+      "category": "Annex A — Data for AI systems",
+      "aumos_protocols": ["ALP"],
+      "aumos_controls": ["ALP-015"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Data lineage and provenance tracked for all AI system datasets",
+      "governanceConfigPaths": [
+        "governance.ai.dataLineagePolicy",
+        "governance.ai.dataSourceRegister",
+        "governance.ai.dataTransformationLog"
+      ],
+      "auditLogEvents": ["data_lineage_documented", "data_source_verified"]
+    },
+    {
+      "id": "A.8.2",
+      "title": "Transparency of AI systems",
+      "category": "Annex A — Information for interested parties of AI systems",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-028", "AOAP-019"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Transparency documentation for AI system users and affected parties",
+      "governanceConfigPaths": [
+        "governance.ai.transparencyPolicy",
+        "governance.ai.systemDisclosureDocuments",
+        "governance.ai.userNotificationProcess"
+      ],
+      "auditLogEvents": ["transparency_document_published", "user_notification_sent"]
+    },
+    {
+      "id": "A.8.4",
+      "title": "Reporting information about AI systems to interested parties",
+      "category": "Annex A — Information for interested parties of AI systems",
+      "aumos_protocols": ["ALP", "AOAP"],
+      "aumos_controls": ["ALP-016", "AOAP-020"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Stakeholder reporting on AI system performance and incidents",
+      "governanceConfigPaths": [
+        "governance.ai.stakeholderReportingPolicy",
+        "governance.ai.incidentReportingProcess",
+        "governance.ai.performanceReporting"
+      ],
+      "auditLogEvents": ["stakeholder_report_issued", "incident_reported"]
+    },
+    {
+      "id": "A.9.2",
+      "title": "Use of AI systems",
+      "category": "Annex A — Use of AI systems",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-029", "AOAP-021"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Acceptable use policies and guidelines for AI system users",
+      "governanceConfigPaths": [
+        "governance.ai.acceptableUsePolicy",
+        "governance.ai.userGuidelines",
+        "governance.ai.useMonitoring"
+      ],
+      "auditLogEvents": ["acceptable_use_policy_acknowledged", "usage_pattern_reviewed"]
+    },
+    {
+      "id": "A.9.4",
+      "title": "Third party and customer relationships",
+      "category": "Annex A — Use of AI systems",
+      "aumos_protocols": ["ATP", "AOAP"],
+      "aumos_controls": ["ATP-030", "AOAP-022"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Third-party AI supply chain and customer relationship governance",
+      "governanceConfigPaths": [
+        "governance.ai.thirdPartyAiPolicy",
+        "governance.ai.supplierDueDiligence",
+        "governance.ai.customerAiAgreements"
+      ],
+      "auditLogEvents": ["supplier_assessment_completed", "customer_agreement_signed"]
+    },
+    {
+      "id": "A.10.2",
+      "title": "Monitoring of AI systems",
+      "category": "Annex A — Monitoring of AI systems",
+      "aumos_protocols": ["ALP", "AOAP"],
+      "aumos_controls": ["ALP-017", "AOAP-023"],
+      "coverage": "full",
+      "evidence_type": "monitoring_record",
+      "notes": "Ongoing monitoring of AI system performance and behavior",
+      "governanceConfigPaths": [
+        "governance.ai.monitoringPolicy",
+        "governance.ai.performanceThresholds",
+        "governance.ai.driftDetectionPolicy"
+      ],
+      "auditLogEvents": ["performance_monitoring_executed", "drift_check_completed"]
+    },
+    {
+      "id": "A.10.3",
+      "title": "AI system event logging",
+      "category": "Annex A — Monitoring of AI systems",
+      "aumos_protocols": ["ALP"],
+      "aumos_controls": ["ALP-018"],
+      "coverage": "full",
+      "evidence_type": "governance_config",
+      "notes": "Event logging for AI system operations and decisions",
+      "governanceConfigPaths": [
+        "governance.ai.eventLoggingPolicy",
+        "governance.ai.logFormat",
+        "governance.ai.logIntegrityControls"
+      ],
+      "auditLogEvents": ["event_log_review_completed", "log_integrity_verified"]
+    }
+  ]
+}

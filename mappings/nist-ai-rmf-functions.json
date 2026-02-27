@@ -1,0 +1,323 @@
+{
+  "$comment": "SPDX-License-Identifier: BSL-1.1 | Copyright (c) 2026 MuVeraAI Corporation",
+  "standard": "NIST AI Risk Management Framework",
+  "version": "1.0",
+  "description": "NIST AI RMF function and subcategory mapping to AumOS governance protocols",
+  "source": "National Institute of Standards and Technology (NIST) AI 100-1",
+  "lastUpdated": "2026-02-26",
+  "functions": [
+    {
+      "id": "GOVERN",
+      "title": "Govern",
+      "description": "Cultivate and implement a culture of risk management within organizations designing, developing, deploying, or using AI systems.",
+      "subcategories": [
+        {
+          "id": "GOVERN-1",
+          "title": "Policies, processes, procedures, and practices",
+          "description": "Legal and regulatory requirements involving AI are understood, managed, and documented.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-001", "AOAP-001"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.aiGovernancePolicy",
+            "governance.ai.regulatoryComplianceRegister",
+            "governance.ai.aiRiskManagementPolicy"
+          ],
+          "auditLogEvents": ["governance_policy_approved", "regulatory_review_completed"]
+        },
+        {
+          "id": "GOVERN-2",
+          "title": "Accountability structures",
+          "description": "Accountability structures are in place so that the appropriate teams and individuals are empowered, responsible, and trained for AI risk management.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-002", "AOAP-002"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.accountabilityMatrix",
+            "governance.ai.aiGovernanceBoard",
+            "governance.ai.rolesAndResponsibilities"
+          ],
+          "auditLogEvents": ["accountability_assignment_made", "governance_board_meeting"]
+        },
+        {
+          "id": "GOVERN-3",
+          "title": "Workforce diversity and AI risk management",
+          "description": "Workforce diversity, equity, inclusion, and accessibility processes are prioritized in the mapping, measuring, and managing of AI risks.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-003", "AOAP-003"],
+          "coverage": "partial",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.deiPolicy",
+            "governance.ai.diversityInAiTeams",
+            "governance.ai.inclusionAssessment"
+          ],
+          "auditLogEvents": ["dei_review_completed", "inclusion_assessment_conducted"]
+        },
+        {
+          "id": "GOVERN-4",
+          "title": "Organizational risk tolerances",
+          "description": "Organizational teams are committed to a culture that considers and communicates AI risk.",
+          "aumos_protocols": ["ATP"],
+          "aumos_controls": ["ATP-004"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.riskAppetiteStatement",
+            "governance.ai.riskToleranceLevels",
+            "governance.ai.riskCommunicationPlan"
+          ],
+          "auditLogEvents": ["risk_tolerance_defined", "risk_culture_assessment_completed"]
+        },
+        {
+          "id": "GOVERN-5",
+          "title": "Processes for ongoing monitoring",
+          "description": "Processes are in place for robust engagement with relevant AI actors.",
+          "aumos_protocols": ["ATP", "ALP"],
+          "aumos_controls": ["ATP-005", "ALP-001"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.stakeholderEngagementPlan",
+            "governance.ai.feedbackMechanisms",
+            "governance.ai.externalConsultation"
+          ],
+          "auditLogEvents": ["stakeholder_engagement_completed", "feedback_collected"]
+        },
+        {
+          "id": "GOVERN-6",
+          "title": "Policies and procedures for third-party AI",
+          "description": "Policies and procedures are in place to address AI risks and benefits arising from third-party software and data and other supply chain issues.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-006", "AOAP-004"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.thirdPartyAiPolicy",
+            "governance.ai.supplyChainRiskPolicy",
+            "governance.ai.vendorAiAssessment"
+          ],
+          "auditLogEvents": ["third_party_ai_assessed", "supply_chain_review_completed"]
+        }
+      ]
+    },
+    {
+      "id": "MAP",
+      "title": "Map",
+      "description": "Context is established and understood so that the risks related to AI systems can be identified.",
+      "subcategories": [
+        {
+          "id": "MAP-1",
+          "title": "Context is established",
+          "description": "Context is established and understood, including the intended purpose, potential positive and negative impacts, and possible benefits of the AI system.",
+          "aumos_protocols": ["ATP"],
+          "aumos_controls": ["ATP-007"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.systemPurposeStatement",
+            "governance.ai.intendedUseDocumentation",
+            "governance.ai.benefitHarmAnalysis"
+          ],
+          "auditLogEvents": ["system_context_documented", "purpose_statement_approved"]
+        },
+        {
+          "id": "MAP-2",
+          "title": "Categorization of AI systems",
+          "description": "Categorization of the AI system is performed.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-008", "AOAP-005"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.systemClassification",
+            "governance.ai.riskTierAssignment",
+            "governance.ai.categorizationCriteria"
+          ],
+          "auditLogEvents": ["system_categorized", "risk_tier_assigned"]
+        },
+        {
+          "id": "MAP-3",
+          "title": "AI capabilities and limitations",
+          "description": "AI capabilities, targeted usage, goals, and expected benefits and costs compared with appropriate benchmarks are understood.",
+          "aumos_protocols": ["ATP"],
+          "aumos_controls": ["ATP-009"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.capabilitiesDocument",
+            "governance.ai.limitationsDocument",
+            "governance.ai.benchmarkResults"
+          ],
+          "auditLogEvents": ["capabilities_documented", "limitations_assessed"]
+        },
+        {
+          "id": "MAP-4",
+          "title": "Risks and impacts",
+          "description": "Risks and benefits are mapped for all components of the AI system, including third-party software and data.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-010", "AOAP-006"],
+          "coverage": "full",
+          "evidence_type": "risk_assessment",
+          "governanceConfigPaths": [
+            "governance.ai.componentRiskMap",
+            "governance.ai.thirdPartyRiskAssessment",
+            "governance.ai.impactMapping"
+          ],
+          "auditLogEvents": ["risk_mapping_completed", "impact_mapping_documented"]
+        },
+        {
+          "id": "MAP-5",
+          "title": "Impacts to individuals, groups, communities, and society",
+          "description": "Likelihood and magnitude of each identified impact based on expected use, past uses of similar AI systems, and other contextual factors are identified and documented.",
+          "aumos_protocols": ["AOAP"],
+          "aumos_controls": ["AOAP-007"],
+          "coverage": "full",
+          "evidence_type": "impact_assessment",
+          "governanceConfigPaths": [
+            "governance.ai.socialImpactAssessment",
+            "governance.ai.communityImpactAnalysis",
+            "governance.ai.impactLikelihoodMatrix"
+          ],
+          "auditLogEvents": ["social_impact_assessed", "community_impact_documented"]
+        }
+      ]
+    },
+    {
+      "id": "MEASURE",
+      "title": "Measure",
+      "description": "Identified risks are assessed, analyzed, or tracked using quantitative, qualitative, or mixed-method tools, techniques, and methodologies.",
+      "subcategories": [
+        {
+          "id": "MEASURE-1",
+          "title": "Appropriate methods and metrics",
+          "description": "Appropriate methods and metrics are identified and applied.",
+          "aumos_protocols": ["ALP", "AOAP"],
+          "aumos_controls": ["ALP-002", "AOAP-008"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.measurementMethodology",
+            "governance.ai.performanceMetrics",
+            "governance.ai.fairnessMetrics"
+          ],
+          "auditLogEvents": ["metrics_defined", "measurement_methodology_approved"]
+        },
+        {
+          "id": "MEASURE-2",
+          "title": "AI systems evaluated for trustworthiness",
+          "description": "AI systems are evaluated for trustworthy characteristics.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-011", "AOAP-009"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.trustworthinessEvaluation",
+            "governance.ai.biasTestingResults",
+            "governance.ai.fairnessAssessment"
+          ],
+          "auditLogEvents": ["trustworthiness_evaluated", "bias_testing_completed"]
+        },
+        {
+          "id": "MEASURE-3",
+          "title": "Mechanisms for tracking AI risks over time",
+          "description": "Mechanisms for tracking identified AI risks over time are in place.",
+          "aumos_protocols": ["ALP", "AOAP"],
+          "aumos_controls": ["ALP-003", "AOAP-010"],
+          "coverage": "full",
+          "evidence_type": "monitoring_record",
+          "governanceConfigPaths": [
+            "governance.ai.riskTrackingRegister",
+            "governance.ai.riskTrendAnalysis",
+            "governance.ai.periodicReassessmentSchedule"
+          ],
+          "auditLogEvents": ["risk_tracking_updated", "trend_analysis_completed"]
+        },
+        {
+          "id": "MEASURE-4",
+          "title": "Feedback from affected communities",
+          "description": "Feedback about efficacy of measurement is collected and assessed.",
+          "aumos_protocols": ["AOAP"],
+          "aumos_controls": ["AOAP-011"],
+          "coverage": "partial",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.communityFeedbackProcess",
+            "governance.ai.grievanceMechanism",
+            "governance.ai.feedbackAnalysis"
+          ],
+          "auditLogEvents": ["community_feedback_collected", "feedback_analysis_completed"]
+        }
+      ]
+    },
+    {
+      "id": "MANAGE",
+      "title": "Manage",
+      "description": "Risks are prioritized and acted upon based on a projected impact.",
+      "subcategories": [
+        {
+          "id": "MANAGE-1",
+          "title": "AI risks are prioritized and responded to",
+          "description": "AI risks based on assessments and other analytical output from the MAP and MEASURE functions are prioritized, responded to, and managed.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-012", "AOAP-012"],
+          "coverage": "full",
+          "evidence_type": "risk_assessment",
+          "governanceConfigPaths": [
+            "governance.ai.riskPrioritizationMatrix",
+            "governance.ai.riskResponsePlan",
+            "governance.ai.riskMitigationActions"
+          ],
+          "auditLogEvents": ["risk_prioritized", "risk_response_implemented"]
+        },
+        {
+          "id": "MANAGE-2",
+          "title": "Strategies to maximize AI benefits",
+          "description": "Strategies to maximize AI benefits and minimize negative impacts are planned, prepared, implemented, documented, and informed by input from relevant AI actors.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-013", "AOAP-013"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.benefitMaximizationStrategy",
+            "governance.ai.negativeImpactMitigation",
+            "governance.ai.stakeholderInputProcess"
+          ],
+          "auditLogEvents": ["benefit_strategy_documented", "mitigation_strategy_implemented"]
+        },
+        {
+          "id": "MANAGE-3",
+          "title": "AI risks and benefits from third parties",
+          "description": "AI risks and benefits from third-party entities are managed.",
+          "aumos_protocols": ["ATP", "AOAP"],
+          "aumos_controls": ["ATP-014", "AOAP-014"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.thirdPartyRiskManagement",
+            "governance.ai.vendorOversightProcedure",
+            "governance.ai.contractualAiRequirements"
+          ],
+          "auditLogEvents": ["third_party_risk_managed", "vendor_oversight_completed"]
+        },
+        {
+          "id": "MANAGE-4",
+          "title": "Risk treatments including response and recovery",
+          "description": "Risk treatments, including response and recovery, and communication plans for the identified and measured AI risks are documented.",
+          "aumos_protocols": ["ATP", "AOAP", "ALP"],
+          "aumos_controls": ["ATP-015", "AOAP-015", "ALP-004"],
+          "coverage": "full",
+          "evidence_type": "governance_config",
+          "governanceConfigPaths": [
+            "governance.ai.incidentResponsePlan",
+            "governance.ai.recoveryProcedures",
+            "governance.ai.riskCommunicationPlan"
+          ],
+          "auditLogEvents": ["incident_response_plan_tested", "recovery_procedure_verified"]
+        }
+      ]
+    }
+  ]
+}

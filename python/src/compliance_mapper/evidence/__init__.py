@@ -8,6 +8,7 @@ Re-exports the public surface of the evidence pipeline:
 - ``EvidenceCollector`` — resolves governance config paths and audit log events.
 - ``EvidenceGenerator`` — converts raw collections into ``ControlAssessment``
   and ``GapItem`` objects.
+- ``generate_evidence_package`` — produces structured evidence package manifests.
 - Internal resolution types for users who need to inspect intermediate results.
 """
 
@@ -17,6 +18,13 @@ from compliance_mapper.evidence.collector import EvidenceCollector
 from compliance_mapper.evidence.generator import (
     AssessmentGenerationParams,
     EvidenceGenerator,
+)
+from compliance_mapper.evidence.package_generator import (
+    EvidenceArtifact,
+    EvidenceConfig,
+    EvidencePackage,
+    PackageSection,
+    generate_evidence_package,
 )
 from compliance_mapper.evidence.types import (
     AuditEventResolution,
@@ -31,4 +39,9 @@ __all__ = [
     "AuditEventResolution",
     "ConfigPathResolution",
     "ControlEvidenceCollection",
+    "generate_evidence_package",
+    "EvidenceConfig",
+    "EvidencePackage",
+    "EvidenceArtifact",
+    "PackageSection",
 ]

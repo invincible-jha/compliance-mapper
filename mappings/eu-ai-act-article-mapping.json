@@ -1,0 +1,165 @@
+{
+  "$schema": "https://aumos.ai/schemas/compliance-mapping/v1",
+  "version": "1.0.0",
+  "framework": "EU AI Act (Regulation 2024/1689)",
+  "lastUpdated": "2026-02-26",
+  "description": "Maps EU AI Act articles to AumOS protocol sections and compliance-mapper controls",
+  "articleMappings": [
+    {
+      "article": "Article 5",
+      "title": "Prohibited AI Practices",
+      "riskLevel": "prohibited",
+      "summary": "Lists AI systems that are entirely prohibited within the EU.",
+      "aumosSections": [],
+      "aumosTool": null,
+      "complianceMapperControls": [],
+      "remediationNote": "Systems matching Article 5 criteria must not be deployed. No AumOS tool can remediate a prohibited use case."
+    },
+    {
+      "article": "Article 6",
+      "title": "Classification Rules for High-Risk AI Systems",
+      "riskLevel": "high_risk",
+      "summary": "Establishes rules for classifying AI systems as high-risk under Annex II or Annex III.",
+      "aumosSections": ["compliance-mapper/risk-classification"],
+      "aumosTool": "compliance-mapper",
+      "complianceMapperControls": ["Art8"],
+      "remediationNote": "Use compliance-mapper EUAIActRiskClassifier to document and evidence your risk classification decision."
+    },
+    {
+      "article": "Article 9",
+      "title": "Risk Management System",
+      "riskLevel": "high_risk",
+      "summary": "Requires a documented, iterative risk management system throughout the AI system lifecycle.",
+      "aumosSections": ["compliance-mapper/risk-management"],
+      "aumosTool": "compliance-mapper",
+      "complianceMapperControls": ["Art9"],
+      "aumosMappedControl": "risk_management_system",
+      "remediationNote": "Use compliance-mapper for risk management documentation. Maintain a live risk register and misuse scenario log."
+    },
+    {
+      "article": "Article 10",
+      "title": "Data and Data Governance",
+      "riskLevel": "high_risk",
+      "summary": "Training, validation, and testing data must meet quality criteria and be governed appropriately.",
+      "aumosSections": ["context-firewall/data-domain-isolation"],
+      "aumosTool": "context-firewall",
+      "complianceMapperControls": ["Art10"],
+      "aumosMappedControl": "data_governance",
+      "remediationNote": "Use context-firewall for data domain isolation. Document training data lineage and bias assessments."
+    },
+    {
+      "article": "Article 11",
+      "title": "Technical Documentation",
+      "riskLevel": "high_risk",
+      "summary": "High-risk AI systems must have technical documentation drawn up before being placed on the market.",
+      "aumosSections": ["agents-md-spec/technical-documentation"],
+      "aumosTool": "agents-md-spec",
+      "complianceMapperControls": ["Art11"],
+      "aumosMappedControl": "technical_documentation",
+      "remediationNote": "Use agents-md-spec and aumos-docs templates to generate and maintain technical documentation."
+    },
+    {
+      "article": "Article 12",
+      "title": "Record-Keeping",
+      "riskLevel": "high_risk",
+      "summary": "High-risk AI systems must have automatic logging capabilities enabling record-keeping.",
+      "aumosSections": ["agent-audit-trail/logging"],
+      "aumosTool": "agent-audit-trail",
+      "complianceMapperControls": ["Art12"],
+      "aumosMappedControl": "record_keeping",
+      "remediationNote": "Use agent-audit-trail for comprehensive immutable record keeping of all AI system decisions."
+    },
+    {
+      "article": "Article 13",
+      "title": "Transparency and Provision of Information to Deployers",
+      "riskLevel": "high_risk",
+      "summary": "High-risk AI systems must be sufficiently transparent to enable deployers to interpret outputs.",
+      "aumosSections": ["agents-md-spec/transparency", "agents-md-spec/capabilities-disclosure"],
+      "aumosTool": "agents-md-spec",
+      "complianceMapperControls": ["Art13"],
+      "aumosMappedControl": "transparency_information",
+      "remediationNote": "Use agents-md-spec for agent capability and limitation disclosure. Publish Instructions for Use."
+    },
+    {
+      "article": "Article 14",
+      "title": "Human Oversight",
+      "riskLevel": "high_risk",
+      "summary": "High-risk AI systems must be designed and developed to allow effective human oversight.",
+      "aumosSections": ["trust-ladder/human-oversight", "trust-ladder/levels"],
+      "aumosTool": "trust-ladder",
+      "complianceMapperControls": ["Art14"],
+      "aumosMappedControl": "human_oversight",
+      "remediationNote": "Use trust-ladder L0-L3 levels to enforce human oversight requirements appropriate to your risk level."
+    },
+    {
+      "article": "Article 15",
+      "title": "Accuracy, Robustness and Cybersecurity",
+      "riskLevel": "high_risk",
+      "summary": "High-risk AI systems must achieve appropriate levels of accuracy, robustness, and cybersecurity.",
+      "aumosSections": ["anomaly-sentinel/robustness", "trust-test/accuracy"],
+      "aumosTool": "anomaly-sentinel",
+      "complianceMapperControls": ["Art15"],
+      "aumosMappedControl": "accuracy_robustness_cybersecurity",
+      "remediationNote": "Use anomaly-sentinel plus trust-test for robustness and accuracy validation pipelines."
+    },
+    {
+      "article": "Article 50",
+      "title": "Transparency Obligations for Certain AI Systems",
+      "riskLevel": "limited_risk",
+      "summary": "Providers of chatbots, deepfake tools, and AI-generated content systems must disclose AI involvement.",
+      "aumosSections": ["agents-md-spec/disclosure", "agents-md-spec/content-labeling"],
+      "aumosTool": "agents-md-spec",
+      "complianceMapperControls": [],
+      "aumosMappedControls": ["disclosure_of_ai_interaction", "content_labeling"],
+      "remediationNote": "Add AI disclosure using agents-md-spec or explicit UI notification. Label AI-generated content per Article 50."
+    },
+    {
+      "article": "Article 95",
+      "title": "Codes of Practice for General-Purpose AI Models",
+      "riskLevel": "minimal_risk",
+      "summary": "Providers of minimal-risk AI systems are encouraged to voluntarily adopt codes of conduct.",
+      "aumosSections": ["compliance-mapper/voluntary-governance"],
+      "aumosTool": "compliance-mapper",
+      "complianceMapperControls": [],
+      "aumosMappedControls": ["voluntary_code_of_conduct"],
+      "remediationNote": "Consider voluntary adoption of AumOS governance tools and best practices for competitive advantage."
+    }
+  ],
+  "aumosSectionIndex": {
+    "compliance-mapper": {
+      "description": "Compliance evidence generation and risk classification",
+      "repo": "aumos-oss/compliance-mapper",
+      "relevantArticles": ["Article 6", "Article 9", "Article 95"]
+    },
+    "context-firewall": {
+      "description": "Data domain isolation and governance",
+      "repo": "aumos-oss/context-firewall",
+      "relevantArticles": ["Article 10"]
+    },
+    "agents-md-spec": {
+      "description": "Agent capability and transparency disclosure specification",
+      "repo": "aumos-oss/agents-md-spec",
+      "relevantArticles": ["Article 11", "Article 13", "Article 50"]
+    },
+    "agent-audit-trail": {
+      "description": "Immutable audit logging for AI system decisions",
+      "repo": "aumos-oss/agent-audit-trail",
+      "relevantArticles": ["Article 12"]
+    },
+    "trust-ladder": {
+      "description": "Human oversight levels from fully-manual to supervised-autonomous",
+      "repo": "aumos-oss/trust-ladder",
+      "relevantArticles": ["Article 14"]
+    },
+    "anomaly-sentinel": {
+      "description": "Robustness and accuracy monitoring for deployed AI systems",
+      "repo": "aumos-oss/anomaly-sentinel",
+      "relevantArticles": ["Article 15"]
+    },
+    "trust-test": {
+      "description": "Accuracy and reliability testing for AI systems",
+      "repo": "aumos-oss/trust-test",
+      "relevantArticles": ["Article 15"]
+    }
+  }
+}
