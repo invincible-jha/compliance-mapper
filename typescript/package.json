@@ -2,22 +2,27 @@
   "name": "@aumos/compliance-mapper",
   "version": "0.1.0",
   "description": "Auto-generate SOC 2, GDPR, and EU AI Act compliance evidence from governance configs and audit logs",
-  "license": "SEE LICENSE IN ../LICENSE",
+  "license": "Apache-2.0",
   "author": "MuVeraAI Corporation",
-  "homepage": "https://github.com/muveraai/aumos-oss/tree/main/compliance-mapper",
+  "homepage": "https://github.com/aumos-ai/compliance-mapper",
   "repository": {
     "type": "git",
-    "url": "https://github.com/muveraai/aumos-oss.git",
-    "directory": "compliance-mapper/typescript"
+    "url": "https://github.com/aumos-ai/compliance-mapper.git",
+    "directory": "typescript"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
+    "aumos",
     "compliance",
     "soc2",
     "gdpr",
     "eu-ai-act",
     "governance",
     "audit",
-    "evidence"
+    "evidence",
+    "ai-governance"
   ],
   "type": "module",
   "main": "./dist/index.js",

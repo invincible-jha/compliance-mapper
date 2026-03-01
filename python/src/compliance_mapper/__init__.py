@@ -64,7 +64,9 @@ from compliance_mapper.report import (
 from compliance_mapper.types import (
     AuditLog,
     AuditLogEntry,
+    ComplianceFrameworkId,
     ComplianceReport,
+    ComplianceRunConfig,
     ControlAssessment,
     ControlStatus,
     EvidenceItem,
@@ -102,6 +104,8 @@ __all__ = [
     "JsonRendererOptions",
     # ── Types ─────────────────────────────────────────────────────────────────
     "GovernanceConfig",
+    "ComplianceRunConfig",
+    "ComplianceFrameworkId",
     "AuditLog",
     "AuditLogEntry",
     "EvidenceItem",

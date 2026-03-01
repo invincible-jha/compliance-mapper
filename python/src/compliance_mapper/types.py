@@ -10,13 +10,78 @@ No mutable state is held between mapper invocations.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Literal
+from enum import Enum
+from typing import Any, Literal, Optional
+
+from pydantic import BaseModel, Field
 
 # ── Governance Configuration ─────────────────────────────────────────────────
 
 # A nested dict representing governance configuration settings.
-# Mirrors the TypeScript GovernanceConfig type.
+# Mirrors the TypeScript GovernanceConfig type.  Used internally by all
+# framework implementations for dot-path evidence resolution.
 GovernanceConfig = dict[str, Any]
+
+
+# ── Compliance Run Configuration ─────────────────────────────────────────────
+
+
+class ComplianceFrameworkId(str, Enum):
+    """Supported compliance framework identifiers."""
+
+    SOC2 = "soc2"
+    GDPR = "gdpr"
+    EU_AI_ACT = "eu_ai_act"
+    ISO_42001 = "iso_42001"
+
+
+class ComplianceRunConfig(BaseModel):
+    """
+    Validated configuration for a single compliance mapping run.
+
+    Use this model to supply structured, runtime-validated parameters to
+    ``ComplianceMapper.map_from_config()`` instead of passing raw dicts.
+    All fields are validated by Pydantic v2 on construction.
+
+    Example::
+
+        config = ComplianceRunConfig(
+            framework=ComplianceFrameworkId.SOC2,
+            organization_name="Acme Corp",
+            audit_period_start="2026-01-01T00:00:00Z",
+            audit_period_end="2026-12-31T23:59:59Z",
+        )
+    """
+
+    framework: ComplianceFrameworkId
+    """The compliance framework to assess against."""
+
+    organization_name: str = Field(..., min_length=1)
+    """Legal or trading name of the organisation being assessed."""
+
+    audit_period_start: Optional[str] = None
+    """ISO 8601 timestamp marking the start of the audit window.
+    When provided, must be earlier than ``audit_period_end``."""
+
+    audit_period_end: Optional[str] = None
+    """ISO 8601 timestamp marking the end of the audit window."""
+
+    governance_data_path: Optional[str] = None
+    """Filesystem path to the governance configuration JSON file.
+    When ``None`` the caller is expected to supply the ``GovernanceConfig``
+    dict directly."""
+
+    output_format: str = Field(default="json", pattern="^(json|pdf|html)$")
+    """Report output format. One of ``'json'``, ``'pdf'``, or ``'html'``."""
+
+    include_evidence: bool = True
+    """Whether to include individual evidence items in the generated report."""
+
+    trust_level_threshold: Optional[float] = Field(
+        default=None, ge=0.0, le=1.0
+    )
+    """Minimum overall compliance rate (0.0–1.0) required to pass the run.
+    When ``None`` no pass/fail threshold is applied."""
 
 # ── Audit Log ────────────────────────────────────────────────────────────────
 
